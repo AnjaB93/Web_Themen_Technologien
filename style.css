@@ -1,69 +1,117 @@
 /* schrift */
 * {
-    font-size: 20px;
+  font-size: 20px;
+  box-sizing: border-box;
 }
 h1 {
-    color: rgb(116, 116, 116);
-    font-size: 3em;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-variant: small-caps;
+  color: rgb(116, 116, 116);
+  font-size: 3em;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-variant: small-caps;
 }
 h2 {
-    color: rgb(116, 116, 116);
-    font-size: 2em;
-    font-family: Roboto, sans-serif;
-    font-weight: 100;
+  color: rgb(116, 116, 116);
+  font-size: 2em;
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
 }
 h3 {
-    color: rgb(50, 50, 50);
-    font-size: 1.5em;
-    font-family: Roboto, sans-serif;
+  color: rgb(50, 50, 50);
+  font-size: 1.5em;
+  font-family: Roboto, sans-serif;
 }
 
 p {
-    color: rgb(50, 50, 50);
-    font-size: 1em;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
+  color: rgb(50, 50, 50);
+  font-size: 1em;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+#quelle {
+  font-size: 0.5em;
+  color: rgb(152, 152, 152);
+}
+#img-titel {
+  color: rgb(103, 103, 103);
+}
+img {
+  max-width: 100%;
+  padding-top: 1em;
+  margin-bottom: 1em;
 }
 
-img {
-    max-width: 100%;
-    padding-top: 1em;
+a {
+  text-decoration: none;
+  text-transform: none;
+}
+a:hover {
+  background-color: #4eacb392;
+  color: white;
+}
+a.button {
+  background-color: #dadada;
+  color: white;
+  padding: 0.75em 2.25em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: duration 0.4s;
+  display: flex;
+  width: 25%;
+  margin: 5%;
+  box-shadow: 0 5px 0 #4eacb3;
+  border-radius: 2px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+a.button:hover {
+  background-color: #4eacb3;
+  color: white;
+}
+
+a.button:active {
+  background-color: black;
 }
 
 .header {
-    width: 90%;
-    margin: 5%;
-    flex: 1;
-    text-align: left;
+  width: 90%;
+  margin: 5%;
+  flex: 1;
+  text-align: left;
+}
+.header-unterseiten {
+  width: 50%;
+  margin: 25%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  flex: 1;
+  text-align: left;
 }
 
 /* Flexbox container */
 .container {
-    background-color: rgb(255, 255, 255); 
-    display: flex;
-    width: 90%;
-    margin: 5%;
-    margin-top: 5%;
-    flex-flow: row wrap;  
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  width: 90%;
+  margin: 5%;
+  margin-top: 5%;
+  flex-flow: row wrap;
 }
-
-/* Break after three boxes*/
-.container hr {
-    width: 100%;
-    border: none;
-    margin: 0em;
-  }
-
-.container-box { 
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 2px 4px rgb(181, 181, 181);
-    z-index: 2;
-    position: relative;
-    flex: 3;
-    margin: 0.5em;
-    padding: 1em;
-   
+.container-unterseiten {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  width: 50%;
+  margin: 25%;
+  margin-top: 5%;
+  flex-flow: column wrap;
+}
+.container-box {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgb(181, 181, 181);
+  z-index: 2;
+  position: relative;
+  flex: 1 1 32%;
+  margin: 0.66%;
+  padding: 1em;
 }
