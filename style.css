@@ -111,7 +111,7 @@ a.button:active {
   box-shadow: 0 2px 4px rgb(181, 181, 181);
   z-index: 2;
   position: relative;
-  flex: 1 1 32%;
+  flex: 0 1 32%;
   margin: 0.66%;
   padding: 1em;
 }
