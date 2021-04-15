@@ -9,52 +9,55 @@
   <body>
     <header class="header-unterseiten">
       <h1>HTML</h1>
-      <h2>Was sind Web Components?</h2>
+      <h2>Wie ist ein HTML-Dokument aufgebeaut?</h2>
     </header>
     <div class="container-unterseiten">
       <div class="container-box-unterseiten">
         <p>
-          Web Components sind sozusagen wiederverwendbare HTML-Komponenten, die
-          unabhängig vom Framework einsetzbar sind. Diese Komponenten sind
-          Code-Blöcke, welche alles in einem haben. Sprich sie bestehen aus den
-          HTML-Elementen & den gazugehörigen CSS und JavaScript Modellierungen.
-          Diese ermöglichen es sie an beliebieger Stelle in Websites und
-          Web-Apps einzusetzen.
+          HTML steht für Hypertext Markup Language un dist die
+          Standard-Markup-Sprache. Hierdurch wird die Struktur einer WEbiste
+          beschrieben, da ein HTML-Dokument aus vielen verschiedenen Elementen
+          besteht, welche dem Browser sagt wie er die Inhalte darstellen soll.
+          Sprich die Elemente bezeichnen Inhalte, sodass genau gekennzeichnet
+          ist, was ist eine Überschrift, ein Absatz oder ein Bild.
         </p>
-        <p>
-          Entwickelt wurde das vom World Wide Web Consortium (W3C) und hat vier
-          Spezifikationen für die Erstellung:
-        </p>
+        <p>Ein einfaches HTML-Dokument ist folgendermaßen aufgebaut:</p>
+        <pre>
+            <code>
+                &lt;!DOCTYPE html&gt; 
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title>Website Titel &lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+            
+                &lt;h1&gt;Überschrift &lt;/h1&gt;
+                &lt;p&gt;Dies ist ein Paragraph. &lt;/p&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
 
-        <strong>Custom Elements:</strong>
-        <p>
-          Eine Sammlung von JavaScript-API's um benutzerdefinierte Elemente zu
-          definieren
-        </p>
-        <strong>Shadow DOM:</strong>
-        <p>
-          Eine Sammlung von JavaScript-API's zum hinzufügen von DOM-Elementen
-        </p>
-        <strong>ES Modules:</strong>
-        <p>
-          Um JavaScript-Dokumente wiederzuverwenden werden ES-Module für die
-          Einbindung eingesetzt
-        </p>
-        <strong>HTML-Templates:</strong>
-        <p>
-          Sind Mark-up-Vorlagen, die auf der dargestellten HTML-Seite nicht
-          angezeigt werden. Somit können sie als Grundlage für eigene
-          benutzerdefinierte Elemente verwendet werden.
-        </p>
-        <p id="img-titel">
-          Solche Web-Components gibt es auch von Inovex. Und zwar die elements -
-          Web Components:
-        </p>
-        <img
-          src="/Web_Themen_Technologien/assets/elements_inovex.png"
-          alt="Web-Components von Inovex"
-        />
-        <a id="quelle" href="https://elements.inovex.de/#/">elements.inovex</a>
+        <p id="img-titel">Hier sind die HTML Tags aufgelistet:</p>
+        <picture>
+          <source
+            media="(max-width:480px)"
+            srcset="
+              /Web_Themen_Technologien/assets/html-tags-infographics-mobile.png
+            "
+            alt="HTML_Cheatsheet"
+          />
+          <source
+            srcset="/Web_Themen_Technologien/assets/html-tags-infographics.png"
+            alt="HTML_Cheatsheet"
+          />
+        </picture>
+        <a
+          id="quelle"
+          href="https://www.templatemonster.com/blog/periodic-table-of-html-tags-infographics/amp/"
+          >templatemonster.com</a
+        >
       </div>
       <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
     </div>
