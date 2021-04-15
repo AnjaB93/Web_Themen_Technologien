@@ -38,11 +38,15 @@ p {
   font-family: Roboto, sans-serif;
   font-weight: 400;
 }
-strong {
+dl {
   color: rgb(50, 50, 50);
   font-size: 1rem;
   font-family: Roboto, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+}
+dt {
+  color: #4eacb3;
+  font-weight: 500;
 }
 #quelle {
   font-size: 0.5rem;
@@ -52,6 +56,11 @@ strong {
   color: rgb(103, 103, 103);
 }
 img {
+  max-width: 100%;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+picture {
   max-width: 100%;
   padding-top: 1rem;
   margin-bottom: 1rem;
@@ -304,6 +313,72 @@ a.button:hover {
     display: flex;
     width: 90%;
     margin: 5%;
+    flex-flow: column wrap;
+  }
+  .header-unterseiten {
+    width: 90%;
+    margin: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    flex: 1;
+    text-align: left;
+  }
+  h1 {
+    color: rgb(116, 116, 116);
+    font-size: 2rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-variant: small-caps;
+  }
+  h2 {
+    color: rgb(116, 116, 116);
+    font-size: 1.5rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+  }
+  a.button {
+    background-color: #dadada;
+    color: white;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 5%;
+    box-shadow: 0 5px 0 #4eacb3;
+    border-radius: 2px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+  }
+}
+/* Flexbox MINI phone container */
+@media (max-width: 350px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    flex-flow: column wrap;
+  }
+  .container-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgb(181, 181, 181);
+    z-index: 2;
+    position: relative;
+    flex: 0 1 32%;
+    margin: 0.66%;
+    padding: 0rem;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .container-unterseiten {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    padding: 0rem;
     flex-flow: column wrap;
   }
   .header-unterseiten {
