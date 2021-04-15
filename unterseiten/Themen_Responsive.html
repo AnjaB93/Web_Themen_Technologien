@@ -1,46 +1,43 @@
-<!DOCTYPE html>
 <html>
+  <!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
-    <title>Responsive Design vs Adaptive Design</title>
+    <title>Responsive Design vs. Adaptive Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="/Web_Themen_Technologien/style.css"
-    />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
   </head>
   <body>
     <header class="header-unterseiten">
-      <h1>Responsive Design vs Adaptive Design</h1>
+      <h1>Responsive Design vs. Adaptive Design</h1>
       <h2>Was ist der Unterschied?</h2>
     </header>
     <div class="container-unterseiten">
-      <div class="container-box">
+      <div class="container-box-unterseiten">
         <p>
           Responsive Design wird eingesetzt wenn eine Plattform auch auf mobilen
-          Endgeräten verfügbar sein soll. Während Responsive ein flexibles
-          Design besitzt, welches auf einem flüssigen Gestaltungsraster basiert,
-          baut Adaptive Design auf ein starres Raster, bei dem das Layout bei
-          Größenänderung hart umgebrochen wird.
+          Endgeräten verfügbar sein soll. Responsive ist ein flexibles Design,
+          welches auf einem "flüssigen" Gestaltungsraster aufbaut. Adaptive
+          Design hat ein starres Raster, bei dem das Layout bei Größenänderung
+          hart umgebrochen wird.
         </p>
         <p id="img-titel">Dies kann man hier in dem Gif ganz gut erkennen:</p>
-        <img
-          src="/assets/1.gif"
-          alt="Gif_1"
-        />
-        <p id="quelle">© Froont.com</p>
-        <h3>Relative vs statische Einheiten</h3>
+        <img src="/Web_Themen_Technologien/assets/1.gif" alt="Gif_1" />
+        <a
+          id="quelle"
+          href="https://onlinemarketing.de/mobile-marketing/kleine-unterschiede-grosse-wirkung-responsive-vs-adaptive-design"
+          >Onlinemarketing.de</a
+        >
+
+        <h3>Relative vs. statische Einheiten</h3>
         <p>
-          Die beim Responsive Design verwendeten relativen Einheiten der
-          Designelemente eignen sich besser für die angepasste Darstellung als
-          statische Einheiten wie Pixel, die beim Adaptive Design genutzt
-          werden. Diese verharren nämlich starr in ihrer Position, während sich
-          das Design mit relativen Einheiten fließend anpasst.
+          Die beim Responsive Design verwendeten relativen Einheiten (wie
+          beispielsweise %) der Designelemente eignen sich besser für die
+          angepasste Darstellung als statische Einheiten wie Pixel, die beim
+          Adaptive Design genutzt werden. Diese verharren nämlich starr in ihrer
+          Position, während sich das Design mit relativen Einheiten fließend
+          anpasst.
         </p>
-        <img
-          src="/assets/2.gif"
-          alt="Gif_2"
-        />
+        <img src="/Web_Themen_Technologien/assets/2.gif" alt="Gif_2" />
         <p id="quelle">© Froont.com</p>
 
         <h3>Maximale vs. keine maximale Breite</h3>
@@ -50,17 +47,28 @@
           65-Zoll Display etwa werden die selben Elemente bei adaptivem Design
           unter Umständen sehr verzerrt dargestellt.
         </p>
-        <img
-          src="/assets/3.gif"
-          alt="Gif_3"
-        />
+        <img src="/Web_Themen_Technologien/assets/3.gif" alt="Gif_3" />
         <p id="quelle">© Froont.com</p>
+        <p>
+          Die maximale Breite kann dafür eingesetzt werden sein Design auf
+          verschiedene Devicegrößen anzupassen. Diese werden mit Media Queries
+          bestimmt & durch @media beschrieben. Hierduch können dann jegliche
+          Styles in CSS für die jeweilige Devicegröße angepasst werden. <br />
+          <br />Von oben nach unten, bsp. Größen für Desktop, Laptop, Tablet &
+          Smartphone. Innerhalb der Klammern können die CSS Parameter der
+          jeweiligen Elemente einer Html Seite auf die Device Größen angepasst
+          werden.
+        </p>
+        <pre>
+            <code>
+                @media (max-width: 1200px){} 
+                @media (max-width: 1024px){}
+                @media (max-width: 768px){}
+                @media (max-width: 480px){}
+            </code>
+        </pre>
       </div>
-      <a
-        class="button"
-        href="/index.html"
-        >Zurück</a
-      >
-    
+      <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
+    </div>
   </body>
 </html>

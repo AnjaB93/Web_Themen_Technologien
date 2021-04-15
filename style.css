@@ -1,35 +1,45 @@
+/* Media-Queries */
+:root {
+  --desktop: 1200px;
+  --laptop: 1024px;
+  --tablet: 768px;
+  --phone: 480px;
+}
 /* schrift */
 * {
-  font-size: 20px;
   box-sizing: border-box;
 }
+html {
+  font-size: 20px;
+}
+
 h1 {
   color: rgb(116, 116, 116);
-  font-size: 3em;
+  font-size: 3rem;
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-variant: small-caps;
 }
 h2 {
   color: rgb(116, 116, 116);
-  font-size: 2em;
+  font-size: 2rem;
   font-family: Roboto, sans-serif;
   font-weight: 100;
 }
 h3 {
   color: rgb(50, 50, 50);
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-family: Roboto, sans-serif;
 }
 
 p {
   color: rgb(50, 50, 50);
-  font-size: 1em;
+  font-size: 1rem;
   font-family: Roboto, sans-serif;
   font-weight: 400;
 }
 #quelle {
-  font-size: 0.5em;
+  font-size: 0.5rem;
   color: rgb(152, 152, 152);
 }
 #img-titel {
@@ -37,8 +47,51 @@ p {
 }
 img {
   max-width: 100%;
-  padding-top: 1em;
-  margin-bottom: 1em;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+pre {
+  background: #f9f9f9;
+  border-left: 3px solid #4eacb392;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+}
+.container {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  width: 90%;
+  margin: 5%;
+  margin-top: 5%;
+  flex-flow: row wrap;
+}
+.container-unterseiten {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  width: 60%;
+  margin: 20%;
+  margin-top: 5%;
+  flex-flow: column wrap;
+}
+.container-box {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgb(181, 181, 181);
+  z-index: 2;
+  position: relative;
+  flex: 0 1 32%;
+  margin: 0.66%;
+  padding: 1rem;
+}
+.container-box-unterseiten {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgb(181, 181, 181);
+  z-index: 2;
+  position: relative;
+  flex: 0 1 32%;
+  margin: 0.66%;
+  padding: 1.5rem;
 }
 
 a {
@@ -52,7 +105,7 @@ a:hover {
 a.button {
   background-color: #dadada;
   color: white;
-  padding: 0.75em 2.25em;
+  padding: 0.75rem 3rem;
   text-decoration: none;
   text-transform: uppercase;
   transition: duration 0.4s;
@@ -70,10 +123,6 @@ a.button:hover {
   color: white;
 }
 
-a.button:active {
-  background-color: black;
-}
-
 .header {
   width: 90%;
   margin: 5%;
@@ -81,37 +130,199 @@ a.button:active {
   text-align: left;
 }
 .header-unterseiten {
-  width: 50%;
-  margin: 25%;
+  width: 60%;
+  margin: 20%;
   margin-bottom: 5%;
   margin-top: 5%;
   flex: 1;
   text-align: left;
 }
 
-/* Flexbox container */
-.container {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  width: 90%;
-  margin: 5%;
-  margin-top: 5%;
-  flex-flow: row wrap;
+/* Flexbox desktop container */
+@media (max-width: 1200px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    margin-top: 5%;
+    flex-flow: row wrap;
+  }
+  .container-unterseiten {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    margin-top: 5%;
+    flex-flow: column wrap;
+  }
+  .container-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgb(181, 181, 181);
+    z-index: 2;
+    position: relative;
+    flex: 0 1 32%;
+    margin: 0.66%;
+    padding: 1rem;
+  }
+  .header-unterseiten {
+    width: 90%;
+    margin: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    flex: 1;
+    text-align: left;
+  }
+  h1 {
+    color: rgb(116, 116, 116);
+    font-size: 3rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-variant: small-caps;
+  }
+  h2 {
+    color: rgb(116, 116, 116);
+    font-size: 2rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+  }
+  a.button {
+    background-color: #dadada;
+    color: white;
+    padding: 0.75rem 3.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: duration 0.4s;
+    display: flex;
+    width: 25%;
+    margin: 5%;
+    box-shadow: 0 5px 0 #4eacb3;
+    border-radius: 2px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+  }
 }
-.container-unterseiten {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  width: 50%;
-  margin: 25%;
-  margin-top: 5%;
-  flex-flow: column wrap;
+/* Flexbox tablet container */
+@media (max-width: 768px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    flex-flow: column wrap;
+  }
+  .container-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgb(181, 181, 181);
+    z-index: 2;
+    position: relative;
+    flex: 0 1 32%;
+    margin: 0.66%;
+    padding: 1.5rem;
+  }
+  .container-unterseiten {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    flex-flow: column wrap;
+  }
+  .header-unterseiten {
+    width: 90%;
+    margin: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    flex: 1;
+    text-align: left;
+  }
+  h1 {
+    color: rgb(116, 116, 116);
+    font-size: 2rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-variant: small-caps;
+  }
+  h2 {
+    color: rgb(116, 116, 116);
+    font-size: 1.5rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+  }
+  a.button {
+    background-color: #dadada;
+    color: white;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: duration 0.4s;
+    display: flex;
+    width: 25%;
+    margin: 5%;
+    box-shadow: 0 5px 0 #4eacb3;
+    border-radius: 2px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+  }
 }
-.container-box {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 2px 4px rgb(181, 181, 181);
-  z-index: 2;
-  position: relative;
-  flex: 0 1 32%;
-  margin: 0.66%;
-  padding: 1em;
+/* Flexbox phone container */
+@media (max-width: 480px) {
+  .container {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    flex-flow: column wrap;
+  }
+  .container-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgb(181, 181, 181);
+    z-index: 2;
+    position: relative;
+    flex: 0 1 32%;
+    margin: 0.66%;
+    padding: 1.5rem;
+  }
+  .container-unterseiten {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    flex-flow: column wrap;
+  }
+  .header-unterseiten {
+    width: 90%;
+    margin: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    flex: 1;
+    text-align: left;
+  }
+  h1 {
+    color: rgb(116, 116, 116);
+    font-size: 2rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-variant: small-caps;
+  }
+  h2 {
+    color: rgb(116, 116, 116);
+    font-size: 1.5rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+  }
+  a.button {
+    background-color: #dadada;
+    color: white;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: duration 0.4s;
+    display: flex;
+    width: 30%;
+    margin: 5%;
+    box-shadow: 0 5px 0 #4eacb3;
+    border-radius: 2px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+  }
 }
