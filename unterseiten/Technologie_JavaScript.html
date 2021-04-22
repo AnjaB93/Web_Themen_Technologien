@@ -9,24 +9,140 @@
   <body>
     <header class="header-unterseiten">
       <h1>JavaScript</h1>
-      <h2>Wie ist ein CSS Style Sheet aufgebaut?</h2>
+      <h2>Was macht JavaScript & wie ist es aufgebaut?</h2>
     </header>
     <div class="container-unterseiten">
       <div class="container-box-unterseiten">
         <p>
-          CSS steht für Cascading Style Sheets. In CSS können HTML-Dokumente in
-          der Gestaltung und Formatierung verändert/angepasst werden. Somit
-          kümmert sich ein CSS Style Sheet um das Design und nicht explizit um
-          den Inhalt der Website. Es können also Schriftarten, Farben, Linien,
-          Höhen und Breiten oder auch ganze Anordnungen von Elementen in CSS
-          gestaltet werden. Das Style Sheet ist im besten Fall eine
-          eigenständige Datei, abgekapselt vom HTML-Dokument, sodass hier alles
-          Styles die das HTML-Dokument betreffen aufgelistet sind.
+          JavaScript ist eine Skriptsprache für Webseiten, wird aber auch
+          außerhalb de Browsers eingesetzt, beispielsweise bei Node.js, Apache
+          CouchDB und Adobe Acrobat. JavaScript ist eine sogenannte
+          prototypbasierte Sprache, die mehreren Mustern folgt, dynamisch ist
+          und sowohl objektorientierte, imperative als auch deklarative
+          Programmierung ermöglicht. Das ECMAScript ist der Standard für
+          JavaScript.
         </p>
         <p>
-          Ein CSS Sytle Sheet hat verschiedene Deklarationen der Elemente von
-          HTML:
+          Im Allgemeinen ist JavaScript eine Programmiersprache mit der sich
+          komplexe Programme in einer Website realisieren lassen, sprich wenn
+          auf einer WEbsite nicht nur statische Infos angezeigt werden wurde
+          JavaScript benutzt. Wenn also ein Liveticker oder eine interaktive
+          Karte auf der Website dargestellt werden, sind diese mit JavaScript
+          dort aufgebeaut worden.
         </p>
+        <h3>Was kann man mit JavaSript bspw. alles machen?</h3>
+        <dl>
+          <dt>Variablen speichern:</dt>
+          <dd>
+            Werte in Variablen speichern, wie beispielsweise Eingaben die vom
+            Nutzer auf der Website eingegeben wurden.
+          </dd>
+          <dt>Operationen auf alle möglichen Elemente anwenden:</dt>
+          <dd>
+            Wenn beispielsweise ein default Text ausgetauscht werden soll,
+            kannst du dies mit einer Operation tun nachdem der Nutzer einen Text
+            eingegeben hat.
+          </dd>
+          <dt>Mit Code auf Events in einer Website reagieren:</dt>
+          <dd>
+            Möchtest du, dass sich bspw. der Text rot färbt, wenn der Nutzer auf
+            einen Button klickt? Dann kannst du dies mit JavaScript umsetzen.
+          </dd>
+          <dt>Und noch so viel mehr...</dt>
+          <dd>
+            Es gibt noch so vieles mehr, was mit JavaScript gemacht werden kann.
+            Aber dies wäre zu viel um es hier alles aufzuzählen.
+          </dd>
+        </dl>
+        <h3>Mit APIs zu mehr Funktionalität!</h3>
+        <p>
+          Wenn du denkst das wars jetzt schon, dann hast du dich getäuscht. Mit
+          Application Programming Interfaces kurz APIs hast du noch mehr tolle
+          Funktionen die du in deine Website einbauen kannst. APIs sind schon
+          fertig geschriebener Code welchen du sozusagen anzapfen & benutzen
+          kannst um diese dort geschriebenen Funktionen für dich zu nutzen. Es
+          gibt zwei Arten von APIs:
+        </p>
+        <dl>
+          <dt>Browser APIs:</dt>
+          <dd>
+            Dies sind APIs vom Webbrowser des Nutzers, welche auf Ressourcen des
+            Computers/Smartphones/etc. zugreifen können, oder komplexe Sachen
+            darstellen/machen können. <br />
+            Beispiele hierfür sind:
+            <ul>
+              <li>
+                Die DOM API (vorgestellt wurde diese auf der
+                <a href="Technologie_HTML.html">HTML-Seite</a>)
+              </li>
+              <li>
+                Mit der
+                <a
+                  href="https://developer.mozilla.org/de/docs/Web/API/Geolocation"
+                  >Geolocation API</a
+                >
+                können geografische Daten abgefragt werden, so kann bspw. Google
+                Maps deinen Standort ermitteln (wenn du das natürlich
+                akzeptierst) und ihn dir auf der Karte anzeigen.
+              </li>
+              <li>
+                Möchtest du 2D oder 3D animierte Grafiken erstellen? Mit
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+                  >Canvas</a
+                >
+                &
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API"
+                  >WebGL</a
+                >
+                kannst du diese Darstellen und selbst erzeugen. Hier ein paar
+                Besipiele auf
+                <a
+                  href="https://experiments.withgoogle.com/experiments?tag=WebGL"
+                  >Chrome Experiments</a
+                >
+                was mit WebGL so geht.
+              </li>
+              <li>
+                Wenn du Sounds oder Videos einbinden möchtest kannst du dies mit
+                den
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery"
+                  >Audio & Video APIs</a
+                >machen. Hier kannst du unteranderem auch über eine Webcam
+                aufnehmen und diese danach wiedergeben.
+              </li>
+            </ul>
+          </dd>
+          <dt>Drittanbieter APIs:</dt>
+          <dd>
+            Diese APIs sind nicht standardmäßig im Browser integriert, deshalb
+            muss der Code und die Informationen der jeweiligen APIs von
+            außerhalb selbst geholt werden. <br />
+            Hier sind zwei externe APIs die du benutzten kannst:
+            <ul>
+              <li>
+                Wenn man die heißesten Tweets auf seiner Website darstellen
+                möchte, kann dies mit der
+                <a href="https://developer.twitter.com/en/docs">Twitter API</a>
+                gemacht werden.
+              </li>
+              <li>
+                Mit der
+                <a href="https://developers.google.com/maps/">Google Maps API</a
+                >kannst du eigene Karten in deiner Website anzeigen lassen oder
+                andere Funktionen von Google Maps nutzen.
+              </li>
+              <li>
+                Es gibt unendlich viele APIs die man einbinden kann, von absolut
+                sinnlos & witzig - unglaublich nützlich & interessant. Auf der
+                Website <a href="https://apilist.fun/">API list</a> kann man
+                einige APIs finden.
+              </li>
+            </ul>
+          </dd>
+        </dl>
         <pre>
             <code>
   &lt;!--normale Tags--&gt; 
@@ -53,18 +169,7 @@
           src="/Web_Themen_Technologien/assets/CSS-CHEAT-SHEET-p1-2019-update.png"
           alt="CSS_Cheatsheet"
         />
-        <img
-          src="/Web_Themen_Technologien/assets/CSS-CHEAT-SHEET-p2-2019-update.png"
-          alt="CSS_Cheatsheet"
-        />
-        <img
-          src="/Web_Themen_Technologien/assets/CSS-CHEAT-SHEET-p3-2019-update.png"
-          alt="CSS_Cheatsheet"
-        />
-        <img
-          src="/Web_Themen_Technologien/assets/CSS-CHEAT-SHEET-p4.png"
-          alt="CSS_Cheatsheet"
-        />
+
         <a id="quelle" href="https://websitesetup.org/css3-cheat-sheet/"
           >websitesetup.org</a
         >
@@ -76,13 +181,7 @@
           je nach größe der Seite die Elemente "fließend" anpasst. Hier ein
           Cheatsheet der Flexbox eigenschaften und wie man sie für sich nutzt:
         </p>
-        <img
-          src="/Web_Themen_Technologien/assets/flexboxsheet.png"
-          alt="CSS_Cheatsheet"
-        />
-        <a id="quelle" href="https://jonitrythall.com/flexbox-cheatsheet"
-          >jonitryhall.com</a
-        >
+
         <p id="img-titel">
           Auf der folgenden Seite sind alles CSS Strukturen nochmals
           detaillierter aufgelsitet und erklärt:

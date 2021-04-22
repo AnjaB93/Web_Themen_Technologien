@@ -27,8 +27,9 @@ h2 {
   font-weight: 100;
 }
 h3 {
-  color: rgb(50, 50, 50);
+  color: rgb(116, 116, 116);
   font-size: 1.5rem;
+  font-weight: 400;
   font-family: Roboto, sans-serif;
 }
 
@@ -48,10 +49,14 @@ dt {
   color: #4eacb3;
   font-weight: 500;
   line-height: 1.5;
-  padding-top: 0.8em;
+  padding-top: 0.8rem;
+}
+li {
+  padding-bottom: 0.8rem;
 }
 #quelle {
-  font-size: 0.5rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.75rem;
   color: rgb(152, 152, 152);
 }
 #quelle_im_text {
@@ -120,6 +125,7 @@ pre {
 a {
   text-decoration: none;
   text-transform: none;
+  color: #4eacb3;
 }
 a:hover {
   background-color: #4eacb392;
@@ -139,7 +145,7 @@ a.button {
   box-shadow: 0 5px 0 #4eacb3;
   border-radius: 2px;
   font-family: Roboto, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 a.button:hover {
