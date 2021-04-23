@@ -85,6 +85,7 @@ pre {
   margin-bottom: 1.6em;
   max-width: 100%;
 }
+
 .container_iframe {
   position: relative;
   overflow: hidden;
@@ -444,5 +445,6 @@ a.button:hover {
     border-radius: 2px;
     font-family: Roboto, sans-serif;
     font-weight: 400;
+    font-size: 0.5rem;
   }
 }
