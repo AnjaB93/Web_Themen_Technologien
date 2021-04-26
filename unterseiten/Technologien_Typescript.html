@@ -19,64 +19,83 @@
           erwartet, welcher Typ eine Variable sein oder eine Funktion ausgeben
           sollte. Typescript setzt genau hier an. Wie es der Name schon verrät
           geht es in Typescript um Typen. Hier ist es Standard, jede Variable
-          mit einem Typ zu versehen und auch Funktion
+          mit einem Typ zu versehen und auch Funktionsparameter und Ausgaben im
+          Vorfeld zu typisieren. Wird ein Wert aber mit einem falschen Typ
+          mitgegeben, erhält man direkt einen Fehler.
         </p>
-        <p>Ein einfaches HTML-Dokument ist folgendermaßen aufgebaut:</p>
-        <pre>
-            <code>
-  &lt;!DOCTYPE html&gt; 
-  &lt;html&gt;
-  &lt;head&gt;
-  &lt;title&gt;Website Titel&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-           
-  &lt;h1&gt;Überschrift&lt;/h1&gt;
-  &lt;p&gt;Dies ist ein Paragraph.&lt;/p&gt;
-                
-  &lt;/body&gt;
-  &lt;/html&gt;
-            </code>
-        </pre>
+        <p>
+          Ein Typescript-Compiler findet diese Fehler, jedoch erst wenn die
+          ts-Dateien (Typescript-Code) kompiliert werden, sprich in JavaScript
+          Code umgewandelt werden. Es wird in jedem Fall eine JavaScript-Datei
+          erstellt, auch wenn der Compiler einem Fehler anzeigt, das heißt die
+          JavaScript-Datei ist trotz Fehler lauffähig. Typescript hilft dabei
+          Fehler zu vermeiden, kann aber nicht garantieren, dass der Code auch
+          wirklich fehlerfrei ist.
+        </p>
+        <dl>
+          <dt>Vorteile von Typescript:</dt>
+          <dd>
+            <ul>
+              <li>
+                viele Toolingfunktionen, wie Autovervollständigung & leichtes
+                Refactoring des Codes
+              </li>
+              <li>in Visual Studio Code kann direkt kompiliert werden</li>
+              <li>
+                Typescript setzt auf Klassen, ähnlich wie bei objektorientierten
+                Programmiersprachen
+              </li>
+              <li>
+                Typdeklarationen erhöhen die Lesbarkeit des Codes und
+                vereinfachen so auch die gemeinsame Arbeit daran
+              </li>
+              <li>
+                einfacher Umstieg von objektorientierten Sprachen zu Typescript
+              </li>
+            </ul>
+          </dd>
+        </dl>
+        <h3>Hier siehst du ein paar Code Beispiele</h3>
+        <p>Ein Beispiel OHNE Typescript in ganz normalen JavaScript:</p>
+        <img
+          src="/Web_Themen_Technologien/assets/javascript_ohneTS.png"
+          alt="javascript_ohneTS"
+        />
 
-        <p id="img-titel">Hier sind die wichtigsten HTML Tags aufgelistet:</p>
-        <picture>
-          <source
-            media="(max-width:480px)"
-            srcset="
-              /Web_Themen_Technologien/assets/html-tags-infographics-mobile.png
-            "
-            alt="HTML_Cheatsheet"
-          />
-          <img
-            src="/Web_Themen_Technologien/assets/html-tags-infographics.png"
-            alt="HTML_Cheatsheet"
-          />
-        </picture>
+        <p>
+          Ein Beispiel MIT Typescript: <br />Dem Funktionsparameter "person"
+          wurde der Typ string gegeben.
+        </p>
+        <img
+          src="/Web_Themen_Technologien/assets/javascript_mitTS.png"
+          alt="javascript_mitTS"
+        />
+
+        <p>
+          Hier sehen wir eine Fehlermeldung in Typescript, da hier ein
+          Zahlen-Array versucht aufgerufen zu werden obwohl die Funktion vom Typ
+          string ist:
+        </p>
+        <img
+          src="/Web_Themen_Technologien/assets/TS_fehlermeldung.png"
+          alt="javascript_mitTS"
+        />
         <a
           id="quelle"
-          href="https://www.templatemonster.com/blog/periodic-table-of-html-tags-infographics/amp/"
-          >templatemonster.com</a
+          href="https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html"
+          >typescriptlang.org</a
         >
-        <h3>Was ist eigentlich das DOM?</h3>
         <p>
-          Ein DOM oder auch Document Object Model ist allgemein eine API, die
-          ein HTML oder XML Dokument darstellt und damit interagieren kann. Man
-          kann sich ein DOM Modell wie eine Baum-Struktur vorstellen, welche
-          alle existierenden Elemente in einem HTML Document darstellt. Über
-          diese Struktur weiß man welche HTML-Elemente im Umlauf sind, auf die
-          man später zugreifen, diese auslesen oder ändern möchte. Hier für gibt
-          es verschiedene Arten auf die jeweiligen Elemente zuzugreifen, doch
-          dies findet man im Kapitel über JavaScript:
+          Weitere Beispiele und Erklärungen findest du auf
+          <a
+            href="https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html"
+            >typescriptlang.org</a
+          >. Oder du machst dieses kleine
+          <a
+            href="https://typescript-exercises.github.io/#exercise=1&file=%2Findex.ts"
+            >Tutorial </a
+          >um die Funktionen von Typescript kennenzulernen.
         </p>
-        <a class="button" href="Technologie_JavaScript.html"
-          >Hier gehts zu JavaScript</a
-        >
-        <p>So könnte ein DOM-Baum aussehen:</p>
-        <img
-          src="/Web_Themen_Technologien/assets/Web-Themen & Technologien - DOM_Baum.jpg"
-          alt="HTML_Cheatsheet"
-        />
       </div>
       <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
     </div>

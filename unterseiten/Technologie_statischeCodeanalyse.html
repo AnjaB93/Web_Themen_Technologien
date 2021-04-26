@@ -1,0 +1,73 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Statische Codeanalyse & Testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>Statische Codeanalyse & Testing</h1>
+      <h2>
+        Wie ist Statische Codeanalyse & Testing? Was gibt es für Möglichkeiten?
+      </h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <h3>Was ist Statische Codeanalyse?</h3>
+        <p>
+          Für die statische Codeanalyse werden sogenannte Linter genutzt. Er
+          kommt in der Softwareentwicklung zur Sicherung der Code-Qualität zum
+          Einsatz. Für verschiedene Programmiersprachen gibt es verschiedene
+          Linter, unter Web-Entwicklern ist
+          <a href="https://eslint.org/">ESLint</a> wohl der bekannteste. Es gibt
+          für jede Programmierspracche eigene Linter. Kommen in einem Projekt
+          mehrere Programmiersprachen zum Einsatz, werden dafür entsprechend
+          mehrere Linter benötigt.
+        </p>
+        <p>
+          Neben ESLint gibt es aber auch noch
+          <a href="https://jslint.com/">JSLint</a> &
+          <a href="https://jshint.com/">JSHint</a>
+        </p>
+        <h3>Github hat einen eigenen Super-Linter entwickelt:</h3>
+        <p>
+          Über den Super-Linter sollen viele Anforderungen automatisiert werden
+          können. So verhindert das Tool, dass fehlerhafter Code in den
+          Masterbranch eines Projektes gemerged wird, hilft bei der Etablierung
+          von Best Practices beim Schreiben von Code über verschiedene
+          Programmiersprachen hinweg und erstellt Richtlinien für Layout und
+          Formatierung. Außerdem soll der Super Linter unter anderem dabei
+          helfen, den Ablauf von Code-Reviews zu streamlinen. Hier gehts zum
+          Repository des
+          <a href="https://github.com/github/super-linter#readme"
+            >Super-Linters</a
+          >.
+        </p>
+        <h3>Testing</h3>
+        <p>
+          Ein Softwaretest prüft und bewertet Software auf Erfüllung der für
+          ihren Einsatz definierten Anforderungen und misst ihre Qualität. Die
+          gewonnenen Erkenntnisse werden zur Erkennung und Behebung von
+          Softwarefehlern genutzt. <br />Es gibt drei Arten von Tests:
+        </p>
+        <dl>
+          <dt>Unit-Tests</dt>
+          <dd>
+            kleine Tests, mit denen eine ganz spezifische Funktionalität
+            getestet werden soll.
+          </dd>
+          <dt>Integration-Tests</dt>
+          <dd>
+            Tests, mit denen das Zusammenspiel verschiedener Funktionalitäten
+            getestet werden soll.
+          </dd>
+          <dt>End-to-End-Testing</dt>
+          <dd>Testing des gesamten Programmflows von Anfang bis Ende.</dd>
+        </dl>
+      </div>
+      <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
+    </div>
+  </body>
+</html>
