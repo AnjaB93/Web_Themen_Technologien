@@ -39,6 +39,21 @@ p {
   font-family: Roboto, sans-serif;
   font-weight: 400;
 }
+p.exkurs {
+  padding: 30px 0 8px;
+  position: relative;
+}
+p.exkurs::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  bottom: 6px;
+  width: 150px;
+  height: 14px;
+  transform: skew(-12deg) translateX(-50%);
+  background: #76e8f0ad;
+  z-index: -1;
+}
 dl {
   color: rgb(50, 50, 50);
   font-size: 1rem;
@@ -65,6 +80,9 @@ li {
 }
 #img-titel {
   color: rgb(103, 103, 103);
+}
+.video_iframe {
+  position: relative;
 }
 img {
   max-width: 100%;

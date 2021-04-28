@@ -1,0 +1,209 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Netzwerkschnittstellen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>Netzwerkschnittstellen</h1>
+      <h2>Was sind Netzwerkschnittstellen? & Welche gibt es?</h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <h3>Was ist eine Netzwerkschnittstelle?</h3>
+        <p>???</p>
+
+        <h3>Welche gibt es?</h3>
+        <p>
+          Über REST, GraphQL oder gRPC können Client und Server miteinander
+          kommunizieren. Für den Transport von Nachrichten verwenden alle drei
+          das HTTP oder HTTP/2 Protokoll. Abgesehen von diesen Gemeinsamkeiten,
+          sind die drei Alternativen grundverschieden. Im folgenden werden die
+          drei Technologien erklärt:
+        </p>
+        <dl>
+          <dt>REST</dt>
+          <dd>
+            Representational State Transfer (kurz: REST) REST ist ein
+            Architekturstil, mit dem ganze Anwendungen gestaltet werden können.
+            Das heißt hier wird beschrieben wie Anforderungen mit dem HTTP
+            Protokoll und den Prinzipien des Webs umgesetzt werden können. Mit
+            den HTTP Methoden GET, POST, PUT und DELETE werden Daten abgefragt,
+            angelegt, geändert oder gelöscht. Diese Methoden werden direkt auf
+            den Geschäftsobjekten, die als HTTP Ressourcen über URIs
+            adressierbar sind, angewandt. Mit Hypermedia können die Ressourcen
+            verlinkt werden.
+            <p></p>
+            <p class="exkurs">EXKURS: Wie sind URI aufgebaut?</p>
+
+            <img
+              src="/Web_Themen_Technologien/assets/URI_Erklärung.jpeg"
+              alt="URI_Erklärung"
+            />
+            <p>
+              Da es bei REST um die Abfrage und Manipulation von Objekten über
+              deren Ressourcen geht, werden diese Ressourcen über die URI
+              angesteuert. Beispielsweise könnte ein Produkt eines Shops die
+              folgende URI besitzen:
+            </p>
+            <pre>
+                <code>
+    https://api.predic8.de/shop/products/11           
+                </code>
+            </pre>
+            <p>
+              Dieser Link beinhält Adresse und Name eines Objektes. Die
+              nachfolgenden Daten ist die sogenannte Repräsentation.
+            </p>
+            <pre>
+              <code>
+   {
+      "name": "Red Grapes",
+      "price": 1.79,
+      "category_url": "/shop/categories/Fruits",
+      "vendor_url": "/shop/vendors/501"
+   }         </code>
+          </pre>
+            <p>
+              Die oben schon erwähnten Methoden GET, POST, PUT und DELETE dienen
+              zur Manipulation und Abfrage dieser Ressourcen. Als Ausgleich gibt
+              es einen großen Gestaltungsspielraum bei der Vergabe von Namen für
+              die Ressourcen, also für die URIs bzw. Pfade.
+            </p>
+            <p>
+              Möchten wir beispielsweise ein neues Produkt anlegen, können wir
+              dies mit einem HTTP-Request tun. Mit POST addressiert die URL die
+              Ressource und das JSON Dokument im HTTP Body ist die
+              Repräsentation. Das Datenformat der Repräsentation ist hierbei
+              frei wählbar zwischen JSON, XML oder Binärformate wie Bilder, PDF
+              etc.
+            </p>
+            <pre>
+              <code>
+  POST https://api.predic8.de/shop/products/
+  Content-Type: application/json              
+  {
+      "name": "Tollkirsche",
+      "preis": 7.99
+  }        </code>
+          </pre>
+            <a
+              id="quelle"
+              href="https://www.predic8.de/rest-graphql-grpc-architektur.htm"
+              >predict8.de</a
+            >
+            <p>
+              Hier findest du noch mehr Aufrufe und Funktionsweisen von
+              <a href="https://www.codecademy.com/articles/what-is-rest"
+                >REST</a
+              >
+            </p>
+          </dd>
+          <dt>GraphQL</dt>
+          <dd>
+            Die Abfragesprache für APIs wurde von Facebook entwickelt und kann
+            mit einer Anfrage genau filtern was als Antwort erwartet wird und so
+            zusätzliche Aufrufe vermeiden. Aufgrund der eingesparten Aufrufe ist
+            GraphQL schneller im Antwortverhalten als REST und somit auch bei
+            schlechten Verbindungen eine otpimalere Lösung. Funktionsaufrufe
+            oder die Manipulation von Daten ist hier ebenfalls möglich.
+            <p>Was ist der unterschied zu REST?</p>
+            <img
+              src="/Web_Themen_Technologien/assets/RESTvsGraphQL.jpg"
+              alt="RESTvsGraphQL"
+            />
+            <a id="quelle" href="https://devopedia.org/graphql"
+              >devopedia.org</a
+            >
+            <p>
+              Im Kapitel Datenbanken wurde die Datenbank SQL erklärt. GraphQL
+              ist mit der Datenbankabfragesprache SQL vergleichbar. Wie auch bei
+              SQL hat der Client bei seinen Abfragen einen großen Spielraum die
+              der Server in seinen Anfragen interpretiert um die gewünschte
+              Antwort zu generieren. Die Objekte haben hier Beziehungen
+              zueinander, welche wie bei einem JOIN in SQL mit einer Abfrage
+              verfolgt werden kann.
+            </p>
+            <p>
+              Im folgenden Beispiel ist eine Abfrage bei der Preis, Name und Ort
+              des Herstellers abgefragt wird. Der Server muss hierbei die
+              Beziehung zwischen Hersteller und dem Produkt kennen um zu diesen
+              zu gelangen. Mit REST oder gRPC müssten hierfür zwei Aufrufe
+              hintereinander getätigt werden.
+            </p>
+            <pre>
+              <code>
+  POST /shop/graphql
+  {
+    produkte {
+      name
+      preis
+      hersteller {
+          ort
+                 }
+             }
+  }       </code>
+          </pre>
+            <p>
+              Möchtest du mehr über GraphQL nachlesen dann schau
+              <a href="https://graphql.org/learn/">Hier</a> vorbei.
+            </p>
+          </dd>
+          <dt>gRPC</dt>
+          <dd>
+            Da Google super viele Daten verarbeitet und es keine Technologie gab
+            die den Anforderungen stand hielten, hat Google protopuf und gRPC
+            entwickelt. gRPC leitet sich aus der Remote Procedure
+            Call-Technologie ab, bei der Funktionen über das Netzwerk aufgerufen
+            werden können. Der Buchstabe g von gRPC steht bei jeder
+            Minor-Release für einen anderen Namen (gummybear,gringotts oder
+            gamit waren bereits an der Reihe). Es gibt noch andere Technologien
+            die ebenfalls auf RPC zurückgreifen, diese sind bspw. die SOAP
+            basierten Web Services, SAP RFC oder CORBA.
+
+            <p>
+              Für die Übertragung von gRPC Aufrufen wird das HTTP/2 Protokoll
+              verwendet. Im Gegensatz zu REST kommt der Entwickler mit HTTP
+              direkt nicht in Verbindung. Das Ansprechen des Netzwerkes ist bei
+              gRPC in den aus der Schnittstellenbeschreibung generierten Klassen
+              verborgen.
+            </p>
+            <p>
+              Möchtest du mehr über gRPC nachlesen dann schau
+              <a href="https://grpc.io/">Hier</a> vorbei.
+            </p>
+            <p class="exkurs">EXKURS: Was sind Remote Procedure Calls?</p>
+            <p>
+              Anwednungen können über RPCs Funktionen bereitstellen, die über
+              das Netzwerk von anderen Rechnern aufgerufen werden können.
+              <br />In diesem Video wird RPC genau erklärt:
+            </p>
+            <iframe
+              class="video_iframe"
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/lslEHXQ8guE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </dd>
+        </dl>
+        <p>
+          Wer mehr über REST, GraphQL und gRPC lesen möchte kann
+          <a
+            href="https://www.predic8.de/rest-graphql-grpc-api-vergleich-artikel.htm"
+            >Hier</a
+          >
+          nachschauen.
+        </p>
+      </div>
+
+      <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
+    </div>
+  </body>
+</html>

@@ -50,7 +50,10 @@
           Ein Softwaretest prüft und bewertet Software auf Erfüllung der für
           ihren Einsatz definierten Anforderungen und misst ihre Qualität. Die
           gewonnenen Erkenntnisse werden zur Erkennung und Behebung von
-          Softwarefehlern genutzt. <br />Es gibt drei Arten von Tests:
+          Softwarefehlern genutzt. Sprich es muss bspw. getestet werden ob eine
+          Webseite aufgerufen werden kann, Formulare ausfüllbar sind, Button
+          anklickbar oder ob der richtige Text angezeigt wird.<br />Es gibt drei
+          verschiedene Testmethoden:
         </p>
         <dl>
           <dt>Unit-Tests</dt>
@@ -66,7 +69,128 @@
           <dt>End-to-End-Testing</dt>
           <dd>Testing des gesamten Programmflows von Anfang bis Ende.</dd>
         </dl>
+        <h3>Testing-Tools:</h3>
+        <p>
+          Damit man nicht selbst alles mühselig selbst schreiben und testen muss
+          gibt es diverse Testing-Tools die einen dabei unterstützen.
+        </p>
+        <dl>
+          <dt>Jest</dt>
+          <dd>
+            <a href="https://jestjs.io/">Jest</a> ist ein JavaScript
+            Testframework, das auf Einfachheit setzt. Eingesetzt werden kann es
+            in Projekten mit Babel, TypeScript, Node, React, Angular, Vue und
+            vielen mehr. In Jest muss keine Konfiguration gemacht werden. Zudem
+            werden die Tests parallelisiert, indem sie in eigenen Prozessen
+            ausgeführt werden, um die Leistung zu maximieren.
+          </dd>
+          <dt>Cypress</dt>
+          <dd>
+            Mit
+            <a href="https://www.cypress.io/how-it-works/">Cypress</a> können
+            End-to-End-Tests während des Entwicklungsprzesses gemacht werden.
+            Ebenfalls aber auch Unit tests & Integration Tests. Die Tests laufen
+            aber nur innerhalb des Browsers und sind daher etwas limitiert.
+            Beispielsweise ein Test auf einen neuen Tap ist mit Cypress nicht
+            möglich. Die Methoden auf denen Cypress basiert sind folgende:
+            <pre>
+                <code>
+    describe()
+    context()
+    it()
+    before()
+    beforeEach() 
+    afterEach() 
+    after()
+    .only() 
+    .skip()                </code>
+            </pre>
+            Was kann Cypress noch:
+            <ul>
+              <li>
+                macht Sschnappschüsse des Frameworks zum Zeitpunkt der
+                Testausführung. Hier durch können Testschritte besser beleuchtet
+                werden.
+              </li>
+              <li>
+                Keine Wartebefehle wie bspw. in Selenium. Cypress wartet
+                automatisch auf Befehle.
+              </li>
+              <li>
+                Während man Befehle schreibt, führt Cypress diese in Echtzeit
+                aus und gibt während der Ausführung visuelles Feedback.
+              </li>
+            </ul>
+          </dd>
+          <dt>Selenium</dt>
+          <dd>
+            Ein weiteres beliebtes Testautomatisierungs Tool ist
+            <a
+              href="https://www.selenium.dev/documentation/en/getting_started/quick/"
+              >Selenium</a
+            >. Wobei Selenium ist in erster Line kein Testautomatisierung Tool,
+            sondern ein Browser Automatisierungstool, welches in Verbindung mit
+            einem Testingframework (wie bspw. JUnit, TestNG) zu einem
+            Testautomatisierung Tool wird. Es ermöglicht Testfälle für den
+            gewünschten Browser mithilfe der Selenium WebDriver-API und dem
+            Testingframework. Der Selenium Web Driver verwendet das
+            JSON-Wire-Protocol für die Testfälle, dies kann man in drei
+            Hauptschritte für die Ausführung unterteilen:
+            <ul>
+              <li>Die Testbefehle werden in eine URL übersetzt</li>
+              <li>Browsertreiber erhalten die URLs über den HTTP-Server</li>
+              <li>
+                Die URLs werden als Anforderungen an die tatsächlichen Browser
+                weitergeleitet und alle Befehle in den Testscripten werden
+                ausgeführt
+              </li>
+            </ul>
+          </dd>
+          <dt>Jasmine</dt>
+          <dd>
+            Dies ist ein verhaltensgesteuertes JavaScript Framework zum testen
+            von JavaScript-Anwendungen.
+            <a
+              href="https://www.freecodecamp.org/news/jasmine-unit-testing-tutorial-4e757c2cbf42/"
+              >Jasmine</a
+            >
+            bietet Dienstprogramme, mit denen automatisierte Tests für
+            synchronen und asynchronen Code ausgeführt werden können. Doch was
+            kann Jasmine genau?
+            <ul>
+              <li>
+                schnelligkeit, geringen Overload und keine externen
+                Abhängigkeiten
+              </li>
+              <li>
+                kann mit verschiedenen Sprachen verwendet werden, wie bspw. auch
+                Ruby und Phyton
+              </li>
+              <li>kein DOM benötigt</li>
+              <li>
+                es bietet eine saubere und leicht verständliche Syntax sowie
+                eine umfangreiche und unkomplizierte API
+              </li>
+              <li>Unit-Testing</li>
+            </ul>
+          </dd>
+          <dt>Mocha</dt>
+          <dd>
+            <a href="https://mochajs.org/">Mocha</a> ist ein funktionsreiches
+            JavaScript-Testframework, das auf Node.js und im Browser ausgeführt
+            wird. Mocha wird oft zusammen mit der Assertion-Bibliothek Chai im
+            Unit-Test Umfeld eingesetzt. <br />Mocha bietet zudem:
+            <ul>
+              <li>Cross-Browser-Support</li>
+              <li>Berichtserstellung</li>
+              <li>synchrones und asynchrones Testen</li>
+              <li>Definition der Test-Sammlungen</li>
+              <li>eine frei wählbare und austauschbare Assertion-Bibliothek</li>
+            </ul>
+          </dd>
+        </dl>
       </div>
+
       <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
     </div>
   </body>
