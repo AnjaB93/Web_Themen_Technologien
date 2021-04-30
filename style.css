@@ -54,6 +54,43 @@ p.exkurs::before {
   background: #76e8f0ad;
   z-index: -1;
 }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+td {
+  text-align: left;
+  padding: 0.5rem;
+  padding-right: 1rem;
+  color: rgb(50, 50, 50);
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  word-break: keep-all;
+  vertical-align: text-top;
+}
+th {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 30px 0 8px;
+  position: relative;
+}
+th::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  bottom: 6px;
+  width: 100px;
+  height: 14px;
+  transform: skew(-12deg) translateX(-50%);
+  background: #76e8f0ad;
+  z-index: -1;
+}
 dl {
   color: rgb(50, 50, 50);
   font-size: 1rem;
@@ -83,6 +120,8 @@ li {
 }
 .video_iframe {
   position: relative;
+  width: auto;
+  height: auto;
 }
 img {
   max-width: 100%;
@@ -102,6 +141,8 @@ pre {
   line-height: 1.7;
   margin-bottom: 1.6em;
   max-width: 100%;
+  word-break: break-word;
+  overflow-x: scroll;
 }
 
 .container_iframe {
@@ -134,6 +175,7 @@ pre {
   margin: 20%;
   margin-top: 5%;
   flex-flow: column wrap;
+  max-width: 100%;
 }
 .container-box {
   background-color: rgb(255, 255, 255);
@@ -154,6 +196,7 @@ pre {
   flex: 0 1 32%;
   margin: 0.66%;
   padding: 1.5rem;
+  max-width: 100%;
 }
 
 a {
@@ -295,6 +338,7 @@ a.button:hover {
     width: 90%;
     margin: 5%;
     flex-flow: column wrap;
+    max-width: 100%;
   }
   .header-unterseiten {
     width: 90%;
@@ -310,6 +354,8 @@ a.button:hover {
     font-family: Roboto, sans-serif;
     font-weight: 400;
     font-variant: small-caps;
+    overflow: hidden;
+    word-break: break-word;
   }
   h2 {
     color: rgb(116, 116, 116);
@@ -360,6 +406,7 @@ a.button:hover {
     width: 90%;
     margin: 5%;
     flex-flow: column wrap;
+    max-width: 100%;
   }
   .header-unterseiten {
     width: 90%;
@@ -426,6 +473,7 @@ a.button:hover {
     margin: 5%;
     padding: 0rem;
     flex-flow: column wrap;
+    max-width: 100%;
   }
   .header-unterseiten {
     width: 90%;

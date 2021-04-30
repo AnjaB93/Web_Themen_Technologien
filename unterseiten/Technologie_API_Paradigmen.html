@@ -2,18 +2,18 @@
   <!DOCTYPE html>
   <head>
     <meta charset="utf-8" />
-    <title>Netzwerkschnittstellen</title>
+    <title>API-Paradigmen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
   </head>
   <body>
     <header class="header-unterseiten">
-      <h1>Netzwerkschnittstellen</h1>
-      <h2>Was sind Netzwerkschnittstellen? & Welche gibt es?</h2>
+      <h1>API-Paradigmen</h1>
+      <h2>Was sind API-Paradigmen? & Welche gibt es?</h2>
     </header>
     <div class="container-unterseiten">
       <div class="container-box-unterseiten">
-        <h3>Was ist eine Netzwerkschnittstelle?</h3>
+        <h3>Was ist ein API-Paradigma?</h3>
         <p>???</p>
 
         <h3>Welche gibt es?</h3>
@@ -183,8 +183,8 @@
             </p>
             <iframe
               class="video_iframe"
-              width="560"
-              height="315"
+              width="auto"
+              height="auto"
               src="https://www.youtube-nocookie.com/embed/lslEHXQ8guE"
               title="YouTube video player"
               frameborder="0"
@@ -192,15 +192,68 @@
               allowfullscreen
             ></iframe>
           </dd>
-        </dl>
-        <p>
-          Wer mehr über REST, GraphQL und gRPC lesen möchte kann
+          <h3>Welche API ist die richtige für mein Projekt?</h3>
+          <img
+            src="/Web_Themen_Technologien/assets/which_API.png"
+            alt="Welche_API"
+          />
           <a
-            href="https://www.predic8.de/rest-graphql-grpc-api-vergleich-artikel.htm"
-            >Hier</a
+            id="quelle"
+            href="https://apisyouwonthate.com/blog/picking-the-right-api-paradigm"
+            >apisyouwonthate.com</a
           >
-          nachschauen.
-        </p>
+          <h3>Was ist der unterschied zwischen REST vs. GraphQL vs. gRPC?</h3>
+          <div class="table-scrollable" style="overflow-x: auto">
+            <table>
+              <tr>
+                <th>REST</th>
+                <th>GraphQL</th>
+                <th>gRPC</th>
+              </tr>
+              <tr>
+                <td>
+                  Bei REST geht es um eine Client-Server-Beziehung, bei der
+                  serverseitige Daten in einfachen Formaten verfügbar gemacht
+                  werden. Für den Datenaustausch zwischen Anwendungen wir meist
+                  JSON (oder XML) verwendet. Dies arbeitet textbasiert und
+                  belastet dadurch nur die Netzwerkressourcen.
+                </td>
+                <td>
+                  Mit GraphQL bestimmt der Client, welche Daten er möchte, wie
+                  er sie haben möchte und in welchem ​​Format er sie haben
+                  möchte. GraphQL ist im Grunde wie RPC mit ein paar
+                  Eigenschaften von REST.
+                </td>
+                <td>
+                  Durch Protocol Buffers (protobuf) und HTTP/2 wird hier ein
+                  deutlich kompakterer Datenstrom organisiert. Der
+                  Speicherbedarf wird durch Serialisierung und Binarisierung der
+                  Daten um 70%. Durch bidirektionales Streaming ohne
+                  Blockierungen beim Datenaustausch hat gRPC Leistungs- und
+                  Geschwindigkeitsvorteile.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <dt>Webhooks</dt>
+          <dd>
+            Webhooks sind eine Umkehrung der klassischen
+            Client-Server-Beziehung. Das heißt ein Webhook ist ein einfacher
+            HTTP Post der ausgelöst wird, wenn ein Ereignis ausgelöst wird. Beim
+            klassischen Ansatz fordert der Client Daten vom Server an, und der
+            Server stellt diese Daten dann für den Client bereit.Unter dem
+            Webhook-Paradigma aktualisiert der Server eine bereitgestellte
+            Ressource und diese wird dann automatisch als Update an den Client
+            gesendet. Der Server pusht diese Daten. Dadurch wird der Client kein
+            Anforderer, sondern ein passiver Empfänger.
+
+            <p>
+              Webhooks werden beispielsweise für Datenaktualisierungen
+              eingesetzt. Wie bei einem Git-Push, werden automatisch Daten
+              bereitgestellt und nicht angefordert.
+            </p>
+          </dd>
+        </dl>
       </div>
 
       <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>

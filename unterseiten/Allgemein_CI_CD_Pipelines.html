@@ -1,0 +1,70 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CI/CD Pipelines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>CI/CD Pipelines</h1>
+      <h2>Wie sind CI/CD Pipelines?</h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <p>
+          CI/CD Pipelines sogern für eine kontinuierliche Automatisierung und
+          Überwachung über den gesamten App-Lifecycle hinweg. Das heißt über die
+          Integrations- und Testphase bis hin zur Bereitstellungs- und
+          Implementierungsphase. Eingesetzt werden die Pipelines im agilen
+          Kontext von DevOps-Teams.
+        </p>
+
+        <h3>Was ist der Unterschied zwischen CI und CD?</h3>
+        <img
+          src="/Web_Themen_Technologien/assets/ci_cd_pipelines.png"
+          alt="ci_cd_pipelines"
+        /><a
+          id="quelle"
+          href="https://www.redhat.com/de/topics/devops/what-is-ci-cd"
+          >redhat.com</a
+        >
+        <p>Die Abkürzung CI/CD hat unterschiedliche Bedeutungen.</p>
+        <dl>
+          <dt>"CI" - Continuous Integration</dt>
+          <dd>
+            „CI“ bedeutet Continuous Integration, hier geht es somit um den
+            Automatisierungsprozess bei der Entwicklung. Ist eine CI
+            erfolgreich, werdern hier regelmäßig neue Codeänderungen für Apps
+            entwickelt, geprüft und in einem gemeinsamen Repository
+            zusammengeführt. Hierdurch sollen Konflikte, die durch zu viele
+            Branches einer App verursacht werden, wenn sie gemeinsam &
+            zeitgleich entwickelt wird, verhindert werden.
+          </dd>
+          <dt>"CD" - Continuous Delivery</dt>
+          <dd>
+            Bei Continuous Delivery geht es um die App-änderungen eines
+            Entwicklers. Bspw. wenn dieser automatisch die App auf Bugs testet
+            und diese in ein Repository (Github, Gitlab, git) hochgelädt, damit
+            diese daraufhin in einer Live-Produktivumgebung bereitgestellt
+            werden kann. Damit wird sichergestellt, das neuer Code mit minimalem
+            Aufwand implementiert werden kann.
+          </dd>
+          <dt>"CD" - Continuous Deployment (das andere "CD")</dt>
+          <dd>
+            Dies ist sozusagen eine Erweiterung des Continuous Delivery da hier
+            die Prüfung der Änderungen nicht manuell sondern automatisiert
+            stattfinden. Hier geht es also darum, das der Entwickler seine
+            Änderungen direkt in das Live-Produkt laden kann, vorausgesetzt die
+            Änderungen bestehen die automatischen Tests. Diese automatischen
+            Tests müssen vorher sehr gut durchdacht sein, da jede Änderung wie
+            gesagt direkt in den Livegang geht und keine manuelle Prüfung davor
+            gemacht wird.
+          </dd>
+        </dl>
+      </div>
+      <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
+    </div>
+  </body>
+</html>
