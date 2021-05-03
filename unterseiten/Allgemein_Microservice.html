@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Microservice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>Microservice</h1>
+      <h2>Was ist Microservice? & Wann spricht man von Microservice?</h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <p>
+          Microservices sind ein Architekturkonzept der Anwendungsentwicklung.
+          Was sie von herkömmlichen, monolithischen (aus einem Stück bestehend,
+          zusammenhängend) Ansätzen unterscheidet, ist die Art und Weise, wie
+          Apps in ihre Kernfunktionen aufgeschlüsselt werden. Jede Funktion bzw.
+          jeder Service kann unabhängig entwickelt und implementiert werden. Das
+          heißt, individuelle Services können ohne jegliche Beeinflussung
+          anderer Services funktionieren (oder auch nicht).
+        </p>
+        <img
+          src="/Web_Themen_Technologien/assets/monolithic-vs-microservices.png"
+          alt="microservice_vs_monolithic"
+        />
+        <p>
+          Man denke an den letzten online Shop den man besucht hat, und die
+          dortige Produktsuche, diese Produktsuche ist ein Service. Vielleicht
+          wurden einem auch Empfehlungen, oder verwandte Produkte angezeigt die
+          aus einer Datenbank von Käuferpräferenzen stammen. Oder man hat was in
+          den Warenkorb gelegt. Dies sind beides ebenfalls ein Services.
+        </p>
+        <p>
+          Ein Microservice ist also eine Kernfunktion einer Anwendung und er
+          wird unabhängig von anderen Services ausgeführt. Die
+          Microservice-Architektur ist aber mehr als nur die Verknüpfungen
+          solcher Kernfunktionen. Sie ist eine Umstrukturierung der
+          Entwicklerteams und deren Kommunikation, welche auf unvermeidbare
+          Fehler vorbereitet, zukünftige Skalierbarkeit plant und die
+          Integration neuer Features vereinfacht.
+        </p>
+        <p>
+          Wie das funktioniert? Durch Anpassung der Grundlagen einer SOA
+          (Service-Oriented Architecture) zur Bereitstellung von Microservices.
+        </p>
+        <p>
+          Mehr zu
+          <a
+            href="https://www.redhat.com/de/topics/microservices/what-are-microservices"
+            >SOA & Microservices</a
+          >
+          fidnest du hier.
+        </p>
+
+        <h3>Vorteile von Microservices:</h3>
+
+        <dl>
+          <dt>Schnellere Markteinführung</dt>
+          <dd>
+            Die Entwicklungszyklen in einer Microservice-Architektur sind viel
+            kürzer, deshalb können Implementierungen und Updates schneller &
+            agiler durchgeführt werden.
+          </dd>
+          <dt>Hochgradig skalierbar</dt>
+          <dd>
+            Besteht Bedarf an einem Service? Dann können diese über mehrere
+            Server und Infrastrukturen hinweg flexibel implementiert werden.
+          </dd>
+          <dt>Robustheit</dt>
+          <dd>
+            Sind die einzeln en Services gut entwickelt, beeinflussen sie sich
+            nicht. Das heißt, wenn eine Komponente ausfällt, streikt im
+            Gegensatz zum monolithischen Ansatz nicht gleich die gesamte App.
+          </dd>
+          <dt>Einfache Implementierung</dt>
+          <dd>
+            Da microservice-basierte Apps modular und kleiner als herkömmliche
+            monolithische Apps aufgebaut sind, gibt es weniger Probleme bei der
+            Implementierung als bei monolithischen Anwendungen. Zwar erfordert
+            dies eine intensivere Koordination, bietet aber sonst sehr viel
+            Vorteile.
+          </dd>
+          <dt>Besserer Zugriff</dt>
+          <dd>
+            Da eine die App in kleinere Bestandteile aufgegliedert wird, können
+            Entwickler die einzelnen Komponenten leichter verstehen,
+            aktualisieren und verbessern. Dies führt zu kürzeren
+            Entwicklungszyklen.
+          </dd>
+          <dt>Mehr Offenheit</dt>
+          <dd>
+            Dank sprachunabhängiger APIs können Entwickler ihre bevorzugte
+            Sprache bzw. Technologie für die notwendige Funktion frei wählen.
+          </dd>
+        </dl>
+      </div>
+      <a class="button" href="javascript:history.back()">Zurück</a>
+    </div>
+    <!------------Footer-------------->
+    <footer class="footer">
+      <div>
+        <dl>
+          <dt class="footer-schrift">Quellen</dt>
+          <dd>
+            <a
+              href="https://www.redhat.com/de/topics/microservices/what-are-microservices"
+              >Was sind Microservices?</a
+            >
+          </dd>
+          <dd>
+            <a href="https://www.simform.com/microservice-testing-strategies/"
+              >Wie teste ich Microservices?</a
+            >
+          </dd>
+        </dl>
+      </div>
+    </footer>
+  </body>
+</html>
