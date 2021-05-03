@@ -181,16 +181,17 @@
               das Netzwerk von anderen Rechnern aufgerufen werden können.
               <br />In diesem Video wird RPC genau erklärt:
             </p>
-            <iframe
-              class="video_iframe"
-              width="auto"
-              height="auto"
-              src="https://www.youtube-nocookie.com/embed/lslEHXQ8guE"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <div class="video_container_iframe">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/lslEHXQ8guE"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </dd>
           <h3>Welche API ist die richtige für mein Projekt?</h3>
           <img
@@ -228,7 +229,7 @@
                   Durch Protocol Buffers (protobuf) und HTTP/2 wird hier ein
                   deutlich kompakterer Datenstrom organisiert. Der
                   Speicherbedarf wird durch Serialisierung und Binarisierung der
-                  Daten um 70%. Durch bidirektionales Streaming ohne
+                  Daten um 70% verringert. Durch bidirektionales Streaming ohne
                   Blockierungen beim Datenaustausch hat gRPC Leistungs- und
                   Geschwindigkeitsvorteile.
                 </td>
@@ -258,5 +259,58 @@
 
       <a class="button" href="/Web_Themen_Technologien/index.html">Zurück</a>
     </div>
+
+    <!------------Footer-------------->
+    <footer class="footer">
+      <div>
+        <dl>
+          <dt class="footer-schrift">Quellen</dt>
+          <dd>
+            <a href="https://www.predic8.de/rest-graphql-grpc-architektur.htm"
+              >Vergleich REST, GraphQL & gRPC</a
+            >
+          </dd>
+          <dd>
+            <a href="https://www.codecademy.com/articles/what-is-rest"
+              >What is REST</a
+            >
+          </dd>
+          <dd>
+            <a href="https://devopedia.org/graphql">GraphQL</a>
+          </dd>
+          <dd>
+            <a href="https://grpc.io/">gRPC</a>
+          </dd>
+        </dl>
+      </div>
+      <div>
+        <dl>
+          <dt class="footer-schrift"></dt>
+          <dd>
+            <a href="https://www.youtube-nocookie.com/embed/lslEHXQ8guE"
+              >Was ist RPC?</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://apisyouwonthate.com/blog/picking-the-right-api-paradigm"
+              >Picking the right API Paradigm</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://nordicapis.com/when-to-use-what-rest-graphql-webhooks-grpc/"
+              >When to use what?</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://www.ionos.de/digitalguide/server/knowhow/grpc-vorgestellt/#:~:text=REST%20nutzt%20f%C3%BCr%20den%20Datenaustausch,einen%20deutlich%20kompakteren%20Datenstrom%20organisieren."
+              >Was ist gRPC?</a
+            >
+          </dd>
+        </dl>
+      </div>
+    </footer>
   </body>
 </html>
