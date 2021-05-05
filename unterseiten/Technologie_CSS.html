@@ -21,7 +21,10 @@
           Höhen und Breiten oder auch ganze Anordnungen von Elementen in CSS
           gestaltet werden. Das Style Sheet ist im besten Fall eine
           eigenständige Datei, abgekapselt vom HTML-Dokument, sodass hier alles
-          Styles die das HTML-Dokument betreffen aufgelistet sind.
+          Styles die das HTML-Dokument betreffen aufgelistet sind. Ausnahmen
+          werden hier bei manchen Frameworks gemacht, wie bspw. React oder
+          Vue.js. Hier werden die Styles direkt in die gleiche Datei gelegt,
+          ähnlich wie beim Komponenten-Code.
         </p>
         <p>
           Ein CSS Sytle Sheet hat verschiedene Deklarationen der Elemente von
@@ -29,12 +32,12 @@
         </p>
         <pre>
             <code>
-  &lt;!--normale Tags--&gt; 
+  &lt;!--Type-Selector--&gt; 
     h1 {
 
     }
 
-  &lt;!--Klassen--&gt;
+  &lt;!--Class-Selector--&gt;
     .ichBinEineKlasse {
 
     }
