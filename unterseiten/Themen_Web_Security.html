@@ -1,0 +1,238 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Security</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>Web Security</h1>
+      <h2>Was ist Web Security? & Wofür ist es gut?</h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <p>
+          Es ist wichtig das eine Website oder eine Webanwendung sicher ist.
+          Selbst einfache Fehler im Code, können dazu führen, dass Fremde von
+          außen auf private Informationen zugreifen können/diese steheln können.
+          <br />
+          Hier findest du eine
+          <a href="https://owasp.org/www-project-top-ten/">Top 10 Liste</a> von
+          Web Application Security Risks. Nachfolgend sind aber auch ein paar
+          aufgelistet:
+        </p>
+        <dl>
+          <dt>Certificate Transparency</dt>
+          <dd>
+            Certificate Transparency (kurz CT) ist ein offenes Framework, dass
+            entwickelt wurde um vor Zertifikatsfehlaustellungen zu schützen und
+            diese zu Überwachen. Neu ausgestellte Zertifikate werden dabei in
+            öffentlich geführten, oft unabhängigen CT-Protokollen
+            "protokolliert". An diese Protokolle werden immer nur neue
+            Datensätze angefügt, die jeweils kryptografisch gesichert sind und
+            die in einzelnen TLS-Zertikifakten dokumentiert sind.
+            <p>
+              <a target="_blank" href="https://certificate.transparency.dev/"
+                >Certificate Transparency</a
+              >
+            </p>
+          </dd>
+          <img
+            src="/Web_Themen_Technologien/assets/CT_ecosystem.gif"
+            alt="CT_ecosystem"
+          />
+          <dt>Reverse Tabnapping</dt>
+          <dd>
+            Ein weiteres großes Problem, ist das Tabnapping. Bei Reverse
+            Tabnapping geht es darum, dass eine von der Zielseite verlinkte
+            Seite diese Seite neu schreiben kann, um sie bspw. durch eine
+            Phishing-Seite zu ersetzen. Da der Nutzer vorher ja auf der
+            richtigen Seite befand, merkt er nicht das er danach auf einer
+            Phishing-Seite gelandet ist. (Besonders dann nicht, wenn diese sehr
+            gut nachgebaut/identisch ist. Wenn der Nutzer nun seine Anmeldedaten
+            auf der Phishing-Seite angibt um sich zu authentifizieren, werden
+            seine Anmeldeinformationen (oder andere vertrauliche Daten) an die
+            Phishing-Seite und nicht an die legitime/richtige Seite gesendet.
+          </dd>
+          <br />
+          <dd>
+            Neben der Möglichkeit von oben, kann jeder http-Link gefälscht
+            werden, um die Zielseite zu überschreiben, wenn sich der Nutzer in
+            einem ungesicherten Netzwerk befindet, bspw. einem öffentlichen
+            WLAN-Hotspot. Der Angriff ist auch dann möglich, wenn die
+            Zielwebsite nur über https verfügbar ist, da der Angreifer nur die
+            http-Site fälschen muss, mit der verlinkt wird.
+          </dd>
+          <br />
+          <dd>
+            Wie du das verhindern kannst siehst du hier:
+            <a
+              target="_blank"
+              href="https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#tabnabbing"
+              >Tapnapping Prävention</a
+            >
+          </dd>
+          <p>
+            Durch die "target" Anweisung in einem HTML-Link oder über
+            "window.open" in JavaScript-Funktionen, lassen sich die
+            Zieladressen/die aktuelle Position ersetzen.
+          </p>
+          <p>Mit Backlink:</p>
+          <img
+            src="/Web_Themen_Technologien/assets/TABNABBING_OVERVIEW_WITH_LINK.png"
+            alt="Tabnapping_mit_link"
+          />
+          <p>Ohne Backlink:</p>
+          <img
+            src="/Web_Themen_Technologien/assets/TABNABBING_OVERVIEW_WITHOUT_LINK.png"
+            alt="Tabnapping_ohne_link"
+          />
+          <dt>Speicher-APIs</dt>
+          <p>Lokaler Speicher</p>
+          <dd>
+            Lokaler Speicher wird auch "Offline Speicher" oder "Web-Speicher"
+            genannt. Das Problem dabei ist, jede für die eigene Anwendung
+            erforderliche Authentifizierung kann von einem Nutzer mit lokalen
+            Berechtigungen für den Computer umgangen werden, auf dem die Daten
+            gespeichert sind. Daher wird empfohlen, keine vertraulichen
+            Informationen im lokalen Speicher zu speichern.
+            <p>
+              Hier findest du mehr Informationen zu den Alternativen zu
+              <a
+                target="_blank"
+                href="https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#local-storage"
+                >Lokalem Speicher</a
+              >
+            </p>
+            <img
+              src="/Web_Themen_Technologien/assets/local_storage.jpeg"
+              alt="meme_local_Storage"
+            />
+          </dd>
+          <p>Clientseitige Datenbanken</p>
+          <dd>
+            Im November 2010 kündigte das W3C die Web SQL-Datenbank (relationale
+            SQL-Datenbank) als veraltete Spezifikation an. Eine neue
+            Standard-API für indizierte Datenbanken oder IndexedDB (ehemals
+            WebSimpleDB) wird aktiv entwickelt, die Datenbankspeicher mit
+            Schlüsselwerten und Methoden zur Durchführung erweiterter Abfragen
+            bereitstellt. Auch hier wird wieder empfohlen keine vertraulichen
+            Informationen im lokalen Speicher zu speichern, da die
+            zugrundeliegendnen Speichermechanismen ebenfalls von jedem Nutzer
+            mit lokalen Berechtigungen für den Computer umgangen werden.
+          </dd>
+          <dt>Cookies</dt>
+          <dd>
+            Der auf Cookies basierende Mechanismus zum Austausch von
+            Sitzungs-IDs bietet mehrere Sicherheitsfunktionen in Form von
+            Cookie-Attributen, die zum Schutz des Austauschs der Sitzungs-ID
+            verwendet werden können:
+            <ul>
+              <li>
+                Secure Attribut <br />
+                Das Secure Cookie-Attribut weist Webbrowser an, das Cookie nur
+                über eine verschlüsselte HTTPS-Verbinung (SSL/TLS) zu senden. Es
+                verhindert, dass die Sitzungs-ID durch
+                "Man-in-the-Middle-Angriffe" offengelegt wird. Somit können
+                Angreifer die Sitzungs-ID nicht einfach aus dem
+                Webbrowser-Verkehr erfassen.
+              </li>
+              <li>
+                HTTPOnly-Attribut <br />
+                Das HTTPOnly Cookie-Attribut weist Webbrowser an, Skripten nicht
+                den Zugriff auf die Cookies über das Objekt DOM document.cookie
+                zu ermöglichen. Dieser Sitzungs-ID-Schutz verhindert, dass die
+                Sitzungs-ID durch XSS-Angriffe gestohlen werden.
+              </li>
+              <li>
+                SameSite-Attribut <br />
+                Mit SameSite kann ein Server ein Cookie-Attribut definieren,
+                sodass der Browser dieses Cookie nicht zusammen mit den
+                standortübergreifenden Anforderungen senden kann.
+              </li>
+              <li>
+                Domänen- und Pfadattribute <br />
+                Das Domain Cookie-Attribut weist Webbrowser an, das Cookie nur
+                an die angegebene Domain und alle Subdomains zu senden. Ist das
+                Attribut nicht festgelegt, soll es standardmäßig an den
+                Ursprungsserver gesendet werden. <br />
+                Das Path Cookie-Attribut weist den Webbroser an, das Cookie nur
+                an das angegebene Verzeichnis oder die angegebenen
+                Unterverzeichnisse der Webanwendung zu senden. Ist das Attribut
+                nicht festgelegt, wird das Cookie standardgemäß nur für das
+                Verzeichnis der angeforderten Ressource gesendet und gesetzt.
+              </li>
+            </ul>
+            <p>
+              Hier findest du mehr Informationen zu
+              <a
+                target="_blank"
+                href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#cookies"
+                >Cookies</a
+              >.
+            </p>
+            <p>
+              Hier findest du auch
+              <a
+                target="_blank"
+                href="https://www.freecodecamp.org/news/web-security-hardening-http-cookies-be8d8d8016e1/"
+                >Code-Beispiele zu Cookies </a
+              >.
+            </p>
+          </dd>
+        </dl>
+      </div>
+      <a class="button" href="javascript:history.back()">Zurück</a>
+    </div>
+
+    <!------------Footer-------------->
+    <footer class="footer">
+      <dl>
+        <dt class="footer-schrift">Quellen</dt>
+        <dd>
+          <a target="_blank" href="https://certificate.transparency.dev/"
+            >Certificate Transparency</a
+          >
+        </dd>
+        <dd>
+          <a
+            target="_blank"
+            href="https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#tabnabbing"
+            >Tapnapping Prävention</a
+          >
+        </dd>
+        <dd>
+          <a
+            target="_blank"
+            href="https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#local-storage"
+            >Lokalem Speicher</a
+          >
+        </dd>
+        <dd>
+          <a
+            target="_blank"
+            href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#cookies"
+            >Cookies</a
+          >
+        </dd>
+      </dl>
+      <dl>
+        <dt class="footer-schrift"></dt>
+        <dd>
+          <a
+            target="_blank"
+            href="https://www.freecodecamp.org/news/web-security-hardening-http-cookies-be8d8d8016e1/"
+            >Code-Beispiele zu Cookies
+          </a>
+        </dd>
+        <dd>
+          <a href="https://owasp.org/www-project-top-ten/"
+            >Top 10 List Web Security Risks</a
+          >
+        </dd>
+      </dl>
+    </footer>
+  </body>
+</html>
