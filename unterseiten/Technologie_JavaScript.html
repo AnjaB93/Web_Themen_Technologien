@@ -208,7 +208,7 @@
           Attribute eines Links ohne einen Link ausgewählt, um ihren Style zu
           ändern. Durch die DOM Style Objekte, wurden die Kacheln um 50%
           durchsichtiger gemacht und die Interaktion (Hover + Klick) durch
-          "none" unterbunden. Style Objecten verändert
+          "none" unterbunden. Style Objecte verändert:
         </p>
         <pre>
           <code>
@@ -219,6 +219,135 @@
   }
           </code>
       </pre>
+        <p>
+          Durch das <a href="https://javascript30.com/">JavaScript30</a>Tutorial
+          habe ich noch einige Learnings zu der Veränderung von CSS Variablen
+          mit JavaScript und Arrays in JavaScript. Diese möchte ich hier kurz
+          aufführen:
+        </p>
+        <p>CSS Variablen in JavaScript</p>
+        <pre>
+              <code>
+  &lt;html&gt;
+  &lt;body&gt;
+  &lt;label for="spacing"&gt;Spacing:&lt;/label&gt;                 
+  &lt;input&gt;
+    id="spacing"
+    type="range"
+    name="spacing"
+    min="10"
+    max="200"
+    value="10"
+    data-sizing="px"
+  &lt;/input&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  ________________________________________________
+
+  &lt;style&gt;
+  :root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px;
+  }
+  // Variablen in CSS          
+  img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+  }
+            
+  .hl {
+    color: var(--base);
+  }
+  &lt;/style&gt;
+  ________________________________________________
+
+  &lt;script&gt;
+    const inputs = document.querySelectorAll(".controls input");
+
+    function handleUpdate() {
+      const suffix = this.dataset.sizing || "";
+      //veränder die Werte von der Variablen und setze das suffix 
+      //"px" dahinter damit sich die Werte auch ändern 
+      //wenn sie Pixelgrößen haben
+      document.documentElement.style.setProperty(
+        `--${this.name}`,
+        this.value + suffix
+      );
+    }
+    
+    //verändert/zeigt die Werte wenn an den "inputs" was 
+    //geändert oder darüber gehovert wird
+    inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+    inputs.forEach((input) => input.addEventListener("mousemove", handleUpdate)
+    );
+    &lt;/script&gt;
+              </code>
+            </pre>
+        <p>Arrays in JavaScript</p>
+        <pre>
+  <code>
+    // FILTERN mit Array.prototype.filter()
+    const fifteen = inventors.filter(
+        (inventors) => inventors.year >= 1500 && inventors.year &lt; 1600
+      );
+      console.table(fifteen);
+
+    // Gib uns bestimmte Werte eines Arrays mit Array.prototype.map()
+    const fullNames = inventors.map(
+        (inventors) => `${inventors.first} ${inventors.last}`
+      );
+      console.log(fullNames); 
+
+    // SORTIERE mit Array.prototype.sort()
+    const ordered = inventors.sort((firstPerson, secondPerson) =>
+        firstPerson.year > secondPerson.year ? 1 : -1
+      );
+      console.table(ordered);
+
+    // Array.prototype.reduce()
+    //LONG VERSION
+      var totalYears = 0;
+      for (var i = 0; i &lt; inventors.length; i++) {
+        totalYears += inventors[i].passed - inventors[i].year;
+      }
+      console.log(totalYears);
+
+      // SHORT VERSION
+      const totalYears2 = inventors.reduce((total, inventors) => {
+        return total + (inventors.passed - inventors.year);
+      }, 0);
+      console.log(totalYears2);
+
+      // Nochmal etwas zu .reduce
+      const data = [
+        "car",
+        "car",
+        "truck",
+        "truck",
+        "bike",
+        "walk",
+        "car",
+        "van",
+        "bike",
+        "walk",
+        "car",
+        "van",
+        "car",
+        "truck",
+      ];
+
+      const transportation = data.reduce(function (obj, item) {
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+      console.log(transportation);
+  </code>
+</pre>
         <p>
           Noch ein kleines Learning zu leeren Links (ich habe mich für die
           href=" " Version entschieden) und wie man sie am besten darstellt:
