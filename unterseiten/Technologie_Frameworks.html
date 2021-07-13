@@ -168,6 +168,189 @@
               </li>
             </ul>
           </dd>
+          <dd>
+            Hier sind Beispiele und Insights aus dem
+            <a href="https://angular.io/tutorial"
+              >Tour of Heroes Tutorial von Angular</a
+            >:
+            <p class="exkurs">Kapitel 1</p>
+            Im ersten Kapitel geht es um die Grundstruktur des Helden-Editors:
+
+            <div class="video_container_iframe">
+              <iframe
+                class="stackBlitz"
+                src="https://stackblitz.com/edit/angular-bv6kwg?embed=1&file=src/app/heroes/heroes.component.html&hideNavigation=1"
+              ></iframe>
+            </div>
+            <ul>
+              <li>
+                Mit der CLI (Command Line Interface) wurde als erstes die
+                HeroesComponent angelegt.
+              </li>
+              <li>
+                In der app.component.html wurde die HeroesComponent eingetragen
+                um diese anzeigen zu lassen. Die AppComponent ist sozusagen die
+                Anzeige für alle Componenten. Wenn hier eine Component
+                eingetragen wird kann über den CLI Befehl "ng serve" diese auf
+                dem lokalen Server angezeigt werden.
+              </li>
+              <li>
+                Durch die UpperCasePipe im &lt;h2&gt; in der
+                heroes.component.html werden die Heronamen immer in
+                Großbuchstaben geschrieben.
+              </li>
+              <li>
+                Durch ngModel wurde eine Verbidnung von hero.name mit der
+                Textbox hergestellt. ([(ngModel)] ist die bidirektionale
+                Datenbindungssyntax von Angular.) Das heißt hier fließen die
+                Daten in beide Richtungen, sodass die hero.name Eigenschaft an
+                die Textbox und wieder zurück gegeben werden kann.
+              </li>
+              <li>
+                Durch den Import von "FormsModule" im AppModule kann die ngModel
+                Direktive aufgerufen werden. Das heißt hierdurch wird das
+                App-Modul erstellt und dies enthält dann alle Abhängigkeiten und
+                Komponenten. Durch laden des Moduls wird der AppComponent
+                gestartet.
+              </li>
+            </ul>
+            <p class="exkurs">Kapitel 2</p>
+            Im zweiten Kapitel geht es um die Liste der Heroes die ausgewählt
+            werden können:
+            <div class="video_container_iframe">
+              <iframe
+                class="stackBlitz"
+                src="https://stackblitz.com/edit/angular-ivy-cfvmx8?file=src%2Fapp%2Fheroes%2Fheroes.component.html"
+              ></iframe>
+            </div>
+
+            <ul>
+              <li>
+                Durch eine Mock-Datei "mock-heroes.ts" wurde eine Liste an
+                Heroes generiert.
+              </li>
+              <li>
+                Damit die Nutzer:innen einen Hero auswählen kann wird diese
+                Liste angezeigt. Hierfür wurde "*ngFor" verwendet. Dies ist eine
+                "Repeater-Direktive" von Angular ähnlich wie eine For-Schleife
+                wiederholt er in hier das Host-Element für jedes Element in der
+                Liste. &lt;li&gt; ist das Host-Element. Die Klasse heroes
+                enthält die Liste der "Helden" aus der HeroesComponent Klasse.
+                Das aktuelle Heldenobjekt ist in "hero" enthalten und wird durch
+                das *ngFor für jede Iteration in der Liste angezeigt.
+              </li>
+              <li>
+                (click)="onSelect(hero)" ist ein Besipiel für die event binding
+                Syntax von Agular. Hier wird ein Klick-Event auf einen Hero
+                vorgenommen. Das Event wird in der heroes.component.ts als
+                Methode definiert (event handler). Zunächst soll kein Hero
+                ausgewählt sein, bis der/die Nutzer:in auf einen Hero klickt.
+              </li>
+              <li>
+                Mit "*ngIf" in der heroes.component.html wird nun definiert,
+                wann ein Hero ausgewählt (selectedHero) ist und wann nicht.
+                Ebenfalls wie bei *ngFor ist *ngIf ähnlich der If-Bedingung.
+                Sprich wenn kein Hero ausgewählt ist zeige keine Details an, ist
+                ein Hero ausgewählt zeige die Details des Hero's.
+              </li>
+              <li>
+                Als letztes wurden Klassenanbindungen (class binding) zu den
+                jeweiligen Elementen die eine andere Klasse haben sollen wenn
+                sie bspw. ausgewählt sind, hinzugefügt. Im heroes.componen.css
+                wurden hierfür Styles für die verschiedenen States der Hero's
+                angelegt.
+              </li>
+            </ul>
+            <p class="exkurs">Kapitel 3</p>
+            Im dritten Kapitel geht es darum verschiedene Teile einer Componente
+            auszulagern um für jede Funktion/Darstellung einzelne
+            Feature-Componenten zu haben:
+            <div class="video_container_iframe">
+              <iframe
+                class="stackBlitz"
+                src="https://stackblitz.com/edit/angular-ivy-cfvmx8?embed=1&file=src/app/heroes/heroes.component.html"
+              ></iframe>
+            </div>
+
+            <ul>
+              <li>
+                Es wurde eine neue Componente erstellt mit dem Namen
+                "hero-detail.component". Diese dient der Anzeige der
+                Herodetails, hier wurde also lediglich der Detailpart aus der
+                hero.component in eine extra Komponente ausgelagert.
+              </li>
+              <li>
+                [hero]="selectedHero" ist ein Angular "property binding", das
+                heißt es wurde der HeroesComponent die Kontolle über die
+                untergeordnete Hero-DetailComponent gegeben. Es sollte somit
+                also jedesmal wenn auf einen Hero geklickt wird das property
+                binding aktualisiert und die Details zu dem Hero angezeigt
+                werden.
+              </li>
+              <li>
+                Damit die Hero-DetailComponent weiß welcher Hero gemeint ist
+                wird über "@Input() hero?: Hero;" in der
+                hero-detail.component.ts hinzugefügt. Somit werden Daten
+                zwischen den Eltern- und Kind-Komponenten geteilt. --> Über
+                @Output kann die Kind-Komponente Daten an die Eltern-Komponente
+                schicken.
+              </li>
+            </ul>
+            <p class="exkurs">Kapitel 4</p>
+            Im vierten Kapitel geht es darum verschiedene Services bereit zu
+            stellen. Diese Services können alle Anwendungsklassen benutzen um
+            Helden zu erhalten. Anstatt diesen Dienst über das Stichwort "new"
+            zu erstellen, wird dies über die Angular "dependency injection" im
+            Konstruktor der HeroesComponent eingefügt:
+            <div class="video_container_iframe">
+              <iframe
+                class="stackBlitz"
+                src="https://stackblitz.com/edit/angular-ivy-67p3hy?embed=1&file=src/app/heroes/heroes.component.ts"
+              ></iframe>
+            </div>
+            <ul>
+              <li>
+                Zunächst wird ein Angular Service erstellt mit dem Namen
+                "hero.service.ts". Durch hinzufügen der heroService Parameter im
+                Konstruktor der HeroesComponent mit "constructor(private
+                heroService: HeroService) {}" injiziert. Wenn Agular jetzt eine
+                HeroesComponent erstellt, setzt das Dependency Injection system
+                die heroService Parameter als Instanz des HeroServices.
+                <p class="exkurs">@Injectable</p>
+                Injectables markieren die Klasse als "Teilnehmer" des dependency
+                injection systems. Das heißt der Injektor erstellt Dependencies
+                (Abhängigkeiten) und verwaltet einen Container mit dependency
+                instances die er nach Möglichkeit wiederverwenden kann. Ein
+                provider ist ein Objekt, das einem Injektor mitteilt, wie eine
+                dependency abgerufen oder erstellt wird. Damit Angular die
+                Dienste aufgerufen werden können müssen diese im Konstruktor der
+                Komponente aufgerufen werden.
+                <img
+                  src="/Web_Themen_Technologien/assets/injector-injects.png"
+                  alt="Injectable and Dependency Injection"
+                />
+              </li>
+              <li>
+                Der Konstuktor sollte so wenig wie möglich machen, deshalb wird
+                die....TBD
+              </li>
+              <li>
+                Services sind eine Möglichkeit, Informationen zwischen Klassen
+                auszutauschen, die sich nicht kennen. Zusätzlich wurde noch der
+                "message.service.ts" erstellt. Der MessageService injiziert an
+                zwei Stellen. Inject in HeroService, der den Dienst zum Senden
+                einer Nachricht verwendet. Inject in MessagesComponent, die
+                diese Nachricht anzeigt und auch die ID anzeigt, wenn der
+                Benutzer auf einen Helden klickt.
+              </li>
+              <li>
+                Damit die Message angezeigt werden kann wurde eine
+                MessageComponent erstellt. Diese gibt aus welcher Hero
+                angeklickt wurde und welche Id er hat. Diese können über den
+                "clear messages" Button gelöscht werden.
+              </li>
+            </ul>
+          </dd>
         </dl>
       </div>
       <a class="button" href="javascript:history.back()">Zurück</a>
@@ -189,6 +372,11 @@
               target="_blank"
               href="https://kinsta.com/de/blog/javascript-bibliotheken/#was-sind-javascript-bibliotheken"
               >Liste an Frameworks</a
+            >
+          </dd>
+          <dd>
+            <a target="_blank" href="https://angular.io/tutorial"
+              >Angular Tour of Heroes - Tutorial</a
             >
           </dd>
         </dl>
