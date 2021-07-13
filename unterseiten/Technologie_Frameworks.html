@@ -289,11 +289,10 @@
               </li>
               <li>
                 Damit die Hero-DetailComponent weiß welcher Hero gemeint ist
-                wird über "@Input() hero?: Hero;" in der
-                hero-detail.component.ts hinzugefügt. Somit werden Daten
-                zwischen den Eltern- und Kind-Komponenten geteilt. --> Über
-                @Output kann die Kind-Komponente Daten an die Eltern-Komponente
-                schicken.
+                wird "@Input() hero?: Hero;" in die hero-detail.component.ts
+                hinzugefügt. Somit werden Daten zwischen den Eltern- und
+                Kind-Komponenten geteilt. --> Über @Output kann die
+                Kind-Komponente Daten an die Eltern-Komponente schicken.
               </li>
             </ul>
             <p class="exkurs">Kapitel 4</p>
@@ -313,16 +312,17 @@
                 Zunächst wird ein Angular Service erstellt mit dem Namen
                 "hero.service.ts". Durch hinzufügen der heroService Parameter im
                 Konstruktor der HeroesComponent mit "constructor(private
-                heroService: HeroService) {}" injiziert. Wenn Agular jetzt eine
-                HeroesComponent erstellt, setzt das Dependency Injection system
-                die heroService Parameter als Instanz des HeroServices.
+                heroService: HeroService) {}" werden diese injiziert. Wenn
+                Agular jetzt eine HeroesComponent erstellt, setzt das Dependency
+                Injection system die heroService Parameter als Instanz des
+                HeroServices.
                 <p class="exkurs">@Injectable</p>
-                Injectables markieren die Klasse als "Teilnehmer" des dependency
-                injection systems. Das heißt der Injektor erstellt Dependencies
+                Injectables markieren die Klasse als "Teilnehmer" des Dependency
+                Injection systems. Das heißt der Injektor erstellt Dependencies
                 (Abhängigkeiten) und verwaltet einen Container mit dependency
                 instances die er nach Möglichkeit wiederverwenden kann. Ein
                 provider ist ein Objekt, das einem Injektor mitteilt, wie eine
-                dependency abgerufen oder erstellt wird. Damit Angular die
+                dependency abgerufen oder erstellt wird. Damit in Angular die
                 Dienste aufgerufen werden können müssen diese im Konstruktor der
                 Komponente aufgerufen werden.
                 <img
