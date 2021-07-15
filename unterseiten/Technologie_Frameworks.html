@@ -179,6 +179,7 @@
             <div class="video_container_iframe">
               <iframe
                 class="stackBlitz"
+                loading="lazy"
                 src="https://stackblitz.com/edit/angular-bv6kwg?embed=1&file=src/app/heroes/heroes.component.html&hideNavigation=1"
               ></iframe>
             </div>
@@ -220,6 +221,7 @@
             <div class="video_container_iframe">
               <iframe
                 class="stackBlitz"
+                loading="lazy"
                 src="https://stackblitz.com/edit/angular-ivy-cfvmx8?file=src%2Fapp%2Fheroes%2Fheroes.component.html"
               ></iframe>
             </div>
@@ -268,6 +270,7 @@
             <div class="video_container_iframe">
               <iframe
                 class="stackBlitz"
+                loading="lazy"
                 src="https://stackblitz.com/edit/angular-ivy-cfvmx8?embed=1&file=src/app/heroes/heroes.component.html"
               ></iframe>
             </div>
@@ -304,6 +307,7 @@
             <div class="video_container_iframe">
               <iframe
                 class="stackBlitz"
+                loading="lazy"
                 src="https://stackblitz.com/edit/angular-ivy-67p3hy?embed=1&file=src/app/heroes/heroes.component.ts"
               ></iframe>
             </div>
@@ -332,8 +336,70 @@
               </li>
               <li>
                 Der Konstuktor sollte so wenig wie möglich machen, deshalb wird
-                die....TBD
+                mit getHeroes() im ngOnInit Lifecycle-Hook aufgerufen. Angular
+                soll dann, nach dem er eine Instanz für die HeroesComponent
+                konstruiert hat, ngOnInit() aufrufen. <br />
+                <pre><code>  
+    ngOnInit() { 
+      this.getHeroes(); 
+    }
+    </code
+                  ></pre>
               </li>
+              <li>
+                Da wir gerade eine Mock-Datei mit "Scheinhelden" haben lassen
+                sich diese synchron abrufen. Dies soll jedoch in Zukunft
+                asynchron ablaufen, wenn bspw. die Daten über eine Remote-Server
+                abgerufen werden. Somit benötigen wir einen asynchrone Signatur
+                umd diese in Zukunft asynchron abgrufen zu können. Die
+                getHeroes() Methode wird deshalb zu einer Beobachtbaren Methode
+                gemacht:
+                <pre><code>
+    import { Observable, of } from 'rxjs';
+
+    getHeroes(): Observable&lt;Hero[]&gt; {
+      const heroes = of(HEROES);
+      return heroes;
+    }
+                </code></pre>
+                of(HEROES) gibt nun ein Observable&lt;Hero[]&gt; zurück, der
+                einen einzelnen Wert ausgibt, nämlich das Array von
+                Scheinhelden. Die HeroService.getHeroes Methode hat bisher
+                Hero[] zurückgegeben. Nun gibt sie Observable&lt;Hero[]&gt;
+                zurück. Das muss so auch noch in der HeroesComponent angepasst
+                werden. Deshalb wird die getHeroes() mit einem subscribe
+                ergänzt:
+                <pre><code>
+    getHeroes(): void {
+      this.heroService.getHeroes()
+          .subscribe(heroes => this.heroes = heroes);
+    }
+                </code></pre>
+                Mit dieser Version der getHeroes() Methode wird auf das
+                Observable gewartet, welches den Array jetzt oder in einigen
+                Minuten ausgibt. Mit der subscribe() Methode wird nun das
+                ausgegebene Array an den Callback übergeben der die heroes
+                Eigenschaft der Komponente festlegt.
+                <p class="exkurs">Observables</p>
+                Observables (dt. beobachtbar)<br />
+                Ein Observer - zu Deutsch Beobachter - behält etwas im Auge und
+                reagiert auf mögliche Änderungen. Möchte ein anderer
+                Anwendungsteil vom Observer über die Änderungen am Observable
+                informiert werden, kann er sich an diesem dazu an- (subscribe)
+                und auch wieder abmelden (unsubscribe). Ein Observable kann
+                dabei abstrakt einfach als Daten-Stream betrachtet werden.
+                Dadurch sind diese auch flexibel einsetzbar und es können
+                beispielsweise mehrere Observables verknüpft oder
+                zusammengefasst werden. Das Prinzip ähnelt stark dem
+                Observer-Pattern und nennt sich Reactive Programming. Angular
+                nutzt als Basis dazu die Observables der ReactiveX Architektur
+                (kurz: RxJS).
+                <p class="exkurs">RxJS</p>
+                RxJS ist eine Bibliothek für die reaktive Programmierung mit
+                Observables, um die Erstellung von asynchronem oder
+                callback-basiertem Code zu vereinfachen.
+              </li>
+              <br />
               <li>
                 Services sind eine Möglichkeit, Informationen zwischen Klassen
                 auszutauschen, die sich nicht kennen. Zusätzlich wurde noch der
@@ -346,8 +412,102 @@
               <li>
                 Damit die Message angezeigt werden kann wurde eine
                 MessageComponent erstellt. Diese gibt aus welcher Hero
-                angeklickt wurde und welche Id er hat. Diese können über den
+                angeklickt wurde und welche ID er hat. Diese können über den
                 "clear messages" Button gelöscht werden.
+              </li>
+            </ul>
+            <p class="exkurs">Kapitel 5</p>
+            Im fünften Kapitel geht es darum zwischen zwei Ansichten über das
+            Angular Routing-Module zu wechseln. Es geht also um eine erweiterte
+            Navigation innerhalb der Seite und die verschiedenen Abhängigkeiten
+            dieser zueinander:
+            <div class="video_container_iframe">
+              <iframe
+                class="stackBlitz"
+                loading="lazy"
+                src="https://stackblitz.com/edit/angular-ivy-quvz9h?embed=1&file=src/app/hero.service.ts"
+              ></iframe>
+            </div>
+            <ul>
+              <li>
+                Der/Die Nutzer:in kann dann wie folgt in der Anwendung
+                navigieren:
+                <img
+                  src="/Web_Themen_Technologien/assets/nav-diagram.png"
+                  alt="Navigationsschaubild Tour of Heroes"
+                />
+              </li>
+              <li>
+                Wie auf der Grafik zu sehen wurde eine weitere Komponente
+                erstellt, das Dashboard. Auf dem Dashboard werden "Top Heroes"
+                angezeigt. Genau wie in der HeroesComponent sollen hier die
+                Details der Heroes angezeigt werden, wenn der/die Nutzer:in auf
+                einen "Top Hero" klickt.
+              </li>
+              <li>
+                <p class="exkurs">Routing</p>
+                Das Routing in Angular hilft uns, von einer Ansicht zur anderen
+                zu navigieren, während Benutzer:innen Aufgaben in Web-Apps
+                ausführen. Der Angular-Router ist ein Kernstück der
+                Angular-Plattform. Angular bietet eine vollständige
+                Routing-Bibliothek mit der Möglichkeit, mehrere Router-Ausgänge,
+                verschiedene Pfadanpassungsstrategien, einfachen Zugriff auf
+                Routenparameter und route guards (Routenwächter) zum Schutz vor
+                unbefugtem Zugriff auf Komponenten.
+                <br />
+                Ein Router funktioniert wie folgt:
+                <ul>
+                  <li>
+                    er liest die Browser-URL, zu der der/die Benutzer:in
+                    navigieren möchte
+                  </li>
+                  <li>
+                    er wendet eine URL-Umleitung an (sofern eine definiert ist)
+                  </li>
+                  <li>
+                    er findet heraus, welcher Router-Zustand der URL entspricht
+                  </li>
+                  <li>
+                    er führt die Guards aus, die im Routerstatus definiert sind
+                  </li>
+                  <li>
+                    er löst die erforderlichen Daten für den Routerstatus auf
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Im Tutorial wird ein neues Routing-Module erstellt, um im
+                späteren Verlauf zwischen dem Dashboard (kommt noch) und der
+                Heroes Seite zu wechseln. Das Module wird app-routing.module.ts
+                genannt. Es gibt zwei typische Elemente:<br />
+                <br />
+                path: eine Zeichenfolge, die mit der URL in der Adressleiste des
+                Browsers übereinstimmt.
+                <br /><br />
+                component: die Komponente, die der Router erstellen soll, wenn
+                er zu dieser Route navigiert.<br />
+                <pre><code>  
+    const routes: Routes = [
+      { path: 'heroes', component: HeroesComponent }
+    ];
+    </code
+                  ></pre>
+                In der app.component.html wird die &lt;app-heroes&gt; durch
+                &lt;router-outlet&gt; ausgetauscht. Zusätzlich wird ein
+                routerLink hinzugefügt.
+                <pre>
+                  <code>
+    &lt;a routerLink="/dashboard"&gt;Dashboard&lt;/a&gt;
+    &lt;a routerLink="/heroes"&gt;Heroes&lt;/a&gt;
+                  </code>
+                </pre>
+              </li>
+
+              <li>
+                Damit die verschiedenen Komponenten untereinander verknüpft
+                sidn, werden mehrere routerLinks gesetzt. Dieser verknüpft auch
+                die Detailansicht sowohl mit dem Dashboard als auch mit der
+                HeroesComponent.
               </li>
             </ul>
           </dd>
