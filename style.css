@@ -12,6 +12,74 @@
 html {
   font-size: 20px;
 }
+.ribbon_label {
+  /* height: 188px;
+  position: relative;
+  margin-bottom: 30px;*/
+  text-transform: uppercase;
+  font-size: 12px;
+  color: white;
+}
+.ribbon {
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  padding: 4px 10px;
+  background: #4eacb3;
+  box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.ribbon:before,
+.ribbon:after {
+  content: "";
+  position: absolute;
+}
+.ribbon:before {
+  width: 7px;
+  height: 100%;
+  top: 0;
+  left: -6.5px;
+  padding: 0 0 7px;
+  background: inherit;
+  border-radius: 5px 0 0 5px;
+}
+.ribbon:after {
+  width: 5px;
+  height: 5px;
+  bottom: -5px;
+  left: -4.5px;
+  background: lightblue;
+  border-radius: 5px 0 0 5px;
+}
+.ribbon_backend {
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  padding: 4px 10px;
+  background: #b3964e;
+  box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.ribbon_backend:before,
+.ribbon_backend:after {
+  content: "";
+  position: absolute;
+}
+.ribbon_backend:before {
+  width: 7px;
+  height: 100%;
+  top: 0;
+  left: -6.5px;
+  padding: 0 0 7px;
+  background: inherit;
+  border-radius: 5px 0 0 5px;
+}
+.ribbon_backend:after {
+  width: 5px;
+  height: 5px;
+  bottom: -5px;
+  left: -4.5px;
+  background: #d2b97c;
+  border-radius: 5px 0 0 5px;
+}
 
 h1 {
   color: rgb(116, 116, 116);

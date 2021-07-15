@@ -510,6 +510,101 @@
                 HeroesComponent.
               </li>
             </ul>
+            <!---<p class="exkurs">Kapitel 6</p>
+            Im sechsten und letzten Kapitel geht es darum Daten von einem Server
+            abzurufen. Der/die Nutzer:in soll zudem die Möglichkeit haben Helden
+            anzulegen, zu löschen und zu bearbeiten. Diese Änderungen sollen
+            dann über HTTP gespeichert werden:
+            <div class="video_container_iframe">
+              <iframe
+                class="stackBlitz"
+                loading="lazy"
+                src="https://stackblitz.com/edit/angular-ivy-quvz9h?embed=1&file=src/app/hero.service.ts"
+              ></iframe>
+            </div>
+            <ul>
+              <li>
+                Der/Die Nutzer:in kann dann wie folgt in der Anwendung
+                navigieren:
+                <img
+                  src="/Web_Themen_Technologien/assets/nav-diagram.png"
+                  alt="Navigationsschaubild Tour of Heroes"
+                />
+              </li>
+              <li>
+                Wie auf der Grafik zu sehen wurde eine weitere Komponente
+                erstellt, das Dashboard. Auf dem Dashboard werden "Top Heroes"
+                angezeigt. Genau wie in der HeroesComponent sollen hier die
+                Details der Heroes angezeigt werden, wenn der/die Nutzer:in auf
+                einen "Top Hero" klickt.
+              </li>
+              <li>
+                <p class="exkurs">Routing</p>
+                Das Routing in Angular hilft uns, von einer Ansicht zur anderen
+                zu navigieren, während Benutzer:innen Aufgaben in Web-Apps
+                ausführen. Der Angular-Router ist ein Kernstück der
+                Angular-Plattform. Angular bietet eine vollständige
+                Routing-Bibliothek mit der Möglichkeit, mehrere Router-Ausgänge,
+                verschiedene Pfadanpassungsstrategien, einfachen Zugriff auf
+                Routenparameter und route guards (Routenwächter) zum Schutz vor
+                unbefugtem Zugriff auf Komponenten.
+                <br />
+                Ein Router funktioniert wie folgt:
+                <ul>
+                  <li>
+                    er liest die Browser-URL, zu der der/die Benutzer:in
+                    navigieren möchte
+                  </li>
+                  <li>
+                    er wendet eine URL-Umleitung an (sofern eine definiert ist)
+                  </li>
+                  <li>
+                    er findet heraus, welcher Router-Zustand der URL entspricht
+                  </li>
+                  <li>
+                    er führt die Guards aus, die im Routerstatus definiert sind
+                  </li>
+                  <li>
+                    er löst die erforderlichen Daten für den Routerstatus auf
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Im Tutorial wird ein neues Routing-Module erstellt, um im
+                späteren Verlauf zwischen dem Dashboard (kommt noch) und der
+                Heroes Seite zu wechseln. Das Module wird app-routing.module.ts
+                genannt. Es gibt zwei typische Elemente:<br />
+                <br />
+                path: eine Zeichenfolge, die mit der URL in der Adressleiste des
+                Browsers übereinstimmt.
+                <br /><br />
+                component: die Komponente, die der Router erstellen soll, wenn
+                er zu dieser Route navigiert.<br />
+                <pre><code>  
+    const routes: Routes = [
+      { path: 'heroes', component: HeroesComponent }
+    ];
+    </code
+                  ></pre>
+                In der app.component.html wird die &lt;app-heroes&gt; durch
+                &lt;router-outlet&gt; ausgetauscht. Zusätzlich wird ein
+                routerLink hinzugefügt.
+                <pre>
+                  <code>
+    &lt;a routerLink="/dashboard"&gt;Dashboard&lt;/a&gt;
+    &lt;a routerLink="/heroes"&gt;Heroes&lt;/a&gt;
+                  </code>
+                </pre>
+              </li>
+
+              <li>
+                Damit die verschiedenen Komponenten untereinander verknüpft
+                sidn, werden mehrere routerLinks gesetzt. Dieser verknüpft auch
+                die Detailansicht sowohl mit dem Dashboard als auch mit der
+                HeroesComponent.
+              </li>
+            </ul>
+          </dd>-->
           </dd>
         </dl>
       </div>
