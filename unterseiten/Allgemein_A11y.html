@@ -1,0 +1,390 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>A11y</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>A11y</h1>
+      <h2>Was ist A11y (Accessibility)? Was gibt es für Möglichkeiten?</h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <h3>Was ist Accessibility - A11y?</h3>
+        <p>
+          Accessibility steht für Barrierefreiheit in der Webentwicklung.
+          Webinhalte sollen also von möglichst vielen Menschen, auch wenn sie
+          eine körperliche/geistige Einschränkung haben genutzt werden können.
+          <br />
+          Technik unterstützt viele in ihrem Alltag, bzw macht viele Dinge
+          einfacher. Für Menschen mit Behinderungen macht Technik vieles
+          möglich. Barrierefreiheit bedeutet, Inhalte so zu entwickeln, dass sie
+          unabhängig von den physischen und kognitiven Fähigkeiten einer Person
+          und unabhängig davon, wie sie auf das Internet zugreifen, so
+          zugänglich wie möglich sind.
+          <br /><b>"The Web is fundamentally designed to work for all people</b
+          >, whatever their hardware, software, language, culture, location, or
+          physical or mental ability. When the Web meets this goal, it is
+          accessible to people with a diverse range of hearing, movement, sight,
+          and cognitive ability."
+          <a
+            id="quelle"
+            href="https://www.w3.org/standards/webdesign/accessibility"
+            >(W3C - Barrierefreiheit)</a
+          >
+        </p>
+        <h3>Accessible SVG's</h3>
+        <p>
+          Scalable Vector Graphic, kurz:SVG, entwickelt sich heute zum
+          bevorzugten Grafikformat für das Web. Was muss getan werden, dass eben
+          diese ebenfalls für Nutzer:innen mit assistiver Technologie (AT)
+          genutzt werden kann? Vorab sollte jedoch geklärt sein ob / wann eine
+          Grafik einen alternativen Text zur Unterstützung benötigt und wann
+          nicht.
+        </p>
+        <dl>
+          <dt>Hier ein paar wichtige Schritte:</dt>
+          <dd>
+            benötigt die Grafik überhaupt einen alternativen Text?
+            <ul>
+              <li>
+                Ist die Grafik dekorativ, dann erhält/braucht sie keinen
+                alternativ Text
+              </li>
+            </ul>
+          </dd>
+          <dd>
+            Was ist der Kontext der Grafik und des sie umgebenden Textes?
+            <ul>
+              <li>
+                Wenn es Text/Inhalte um die Grafik gibt, die den Alternativtext
+                bereitstellen, ist kein zusätzlicher altText erforderlich.
+                <br />
+                Beispielsweise:
+                <p
+                  class="codepen"
+                  data-height="265"
+                  data-theme-id="dark"
+                  data-default-tab="html,result"
+                  data-user="hmig"
+                  data-slug-hash="jrORXq"
+                  style="
+                    height: 265px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                  data-pen-title="SVG as img src for figure with figcaption"
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/hmig/pen/jrORXq">
+                      SVG as img src for figure with figcaption</a
+                    >
+                    by Heather Migliorisi (<a href="https://codepen.io/hmig"
+                      >@hmig</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+              </li>
+              <li>
+                Was ist der am besten geeignete Alternativtext für die Grafik,
+                wenn sie ein altAttribut benötigt? Je nach Inhalt des Bildes
+                kann es unterschiedlich gehandhabt werden:
+                <p
+                  class="codepen"
+                  data-height="265"
+                  data-theme-id="dark"
+                  data-default-tab="html,result"
+                  data-user="hmig"
+                  data-slug-hash="WxNBZp"
+                  style="
+                    height: 265px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                  data-pen-title="SVG as img src for figure with figcaption"
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/hmig/pen/WxNBZp">
+                      SVG as img src for figure with figcaption</a
+                    >
+                    by Heather Migliorisi (<a href="https://codepen.io/hmig"
+                      >@hmig</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+            </ul>
+          </dd>
+          <dd>
+            Hat die Grafik eine Funktion ? Wenn ja, sollte es dem/der Nutzer:in
+            mitgeteilt werden.
+            <ul>
+              <li>
+                Anstatt die Symbole beispielsweise genau so zu beschriften, wie
+                sie dargestellt werden...<br />
+                <img
+                  src="/Web_Themen_Technologien/assets/codepen.png"
+                  alt="CodePen Logo"
+                />
+                <br />
+                Besipiel fehlerhafter Code:
+                <pre>
+                  <code>
+  &lt;a href="http://codepen.io/username"&gt; 
+        &lt;img src="codepen_icon.png" 
+                alt="CodePen Logo"&gt; 
+  &lt;/a&gt;
+                  </code>
+                </pre>
+              </li>
+              <li>
+                ...sollte dem/der Nutzer:in Kontext gegeben werden:
+                <br />
+                Gutes Codebeispiel:
+                <pre>
+                  <code>
+  &lt;a href="http://codepen.io/username"&gt; 
+        &lt;img src="codepen_icon.png" 
+                alt="See Picked Pens"&gt; 
+  &lt;/a&gt;
+                  </code>
+                </pre>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+        <dl>
+          <dt>Wie kann aber nun ein SVG eingebettet werden?</dt>
+          <dd>
+            <ul>
+              <li>
+                SVG als img src
+                <p
+                  class="codepen"
+                  data-height="300"
+                  data-default-tab="html,result"
+                  data-slug-hash="yembbb"
+                  data-user="hmig"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/hmig/pen/yembbb">
+                      SVG as img src</a
+                    >
+                    by Heather Migliorisi (<a href="https://codepen.io/hmig"
+                      >@hmig</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+              <li>
+                Inline-SVG
+                <br />
+                Ein inline SVG ist direkt im DOM verfügbar und somit von der
+                accessibility API, welche von AT (assistiver Technologie)
+                genutzt wird, frei zugänglich. Möchte man jetzt noch bspw.
+                Animation hinzufügen, sollte ein Title (title) hinzugefügt
+                werden (eine description (desc) nur wenn nötig, diese Beschreibt
+                die Grafik nochmals genauer), sodass der/die Nutzer:in genau
+                weiß was hier passiert/abgebildet ist. In der description hier
+                steht "An illustrated gray cat with bright green blinking
+                eyes.", dadurch wird die Animation genauer erläutert.
+                <br />
+                <a href="https://www.w3.org/TR/SVG11/struct.html#DescriptionAndTitleElements">Was ist "desc" & "title"?</a>
+                <p
+                  class="codepen"
+                  data-height="300"
+                  data-default-tab="html,result"
+                  data-slug-hash="adQoOJ"
+                  data-user="hmig"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/hmig/pen/adQoOJ">
+                      Simple Inline Accessible SVG Cat - using title and desc</a
+                    >
+                    by Heather Migliorisi (<a href="https://codepen.io/hmig"
+                      >@hmig</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+              <li>
+                SVG via object oder iframe einbinden<br />
+                &lt;object&gt;und &lt;iframe&gt; sind hier keine gute Variante
+                um SVGs einzubinden, da diese nicht ausreichend Möglichkeiten
+                haben, um von einem Screenreader gelesen zu werden.
+              </li>
+            </ul>
+          </dd>
+        </dl>
+        <dl>
+          <dt>Symbole als SVG's:</dt>
+          <dd>
+            <p>
+              Um Icon-Schriftart accessible zu machen, können ebenfalls SVG's
+              benutzt werden. Diese werden dann mit einem Titel versehen um
+              somit von Screenreadern ausgelesen zu werden. Es gibt hierbei
+              wieder verschiedene Varianten wie ein SVG Symbol eingebunden
+              werden kann:
+            </p>
+            <ol class="numbers">
+              <li>Eigenständiges Symbol mit Bedeutung</li>
+              <li>Eigenständiges Symbol als Dekoration</li>
+              <li>Verknüpftes Symbol ohne Text</li>
+              <li>Verknüpftes Symbol mit statischem Text</li>
+              <li>Verknüpftes Symbol mit dynamischem Text</li>
+            </ol>
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="yObzRL"
+              data-user="hmig"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/hmig/pen/yObzRL">
+                  Accessible SVG Icons</a
+                >
+                by Heather Migliorisi (<a href="https://codepen.io/hmig"
+                  >@hmig</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </dd>
+        </dl>
+        <h3>Zusammenfassung / Checkliste</h3>
+        <p>
+          Eine effektive und gezielte Modifikation von Websiten im Backend ist
+          Teil der "OnPage-Optimierung". Mit Meta-Tags, wie bspw. für Titles &
+          Descriptions der Ober- und Unterseiten (diese sind für die
+          Vollständigkeit von Snippets unerlässlich), werden Websites und
+          Anwendungen für SEO optimiert. Ebenfalls Content-Optimierungen und
+          Seitenanalysen sind Teil der SEO-Tätigkeiten im Backend.
+          <img
+                  src="/Web_Themen_Technologien/assets/A11y_Checkliste.jpg"
+                  alt="Accessible SVG's Checkliste"
+                />
+        </p>
+        <dl>
+          <dt>Weitere wichtige Punkte:</dt>
+          <dd>
+            <ul>
+              <li>Komplexe Bilder – Ein barrierefreier Graph</li>
+              <li>Interaktive Bilder</li>
+              <li>SVGs mit hohem Kontrast</li>
+              <li><a href="https://www.tpgi.com/basic-screen-reader-commands-for-accessibility-testing/">Testing mit Screenreadern</a></li>
+            </ul>
+            <p>Links zu den Themen:
+              <ul>
+                <li>
+                  <a href="https://css-tricks.com/accessible-svgs/#example-2-standalone-icon-decorative">Accessible SVGs</a>
+                </li>
+                <li> <a href="https://www.w3.org/TR/html51/semantics-embedded-content.html#alt-text">alt-text für Grafiken</a></li>
+                <li> <a href="https://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/#accessibility-apis">Accessibility APIs</a></li>
+                <li><a href="https://docs.microsoft.com/en-us/previous-versions/hh771830(v=vs.85)">Nutzung von Kontrast-Modi für verschiedene Medien</a></li>
+                <li><a href="https://www.w3.org/TR/graphics-aria-1.0/#roles">Graphics Roles</a></li>
+                <li><a href="https://www.sitepoint.com/tips-accessible-svg/">Tips for accessible SVG</a></li>
+                <li><a href="https://www.a11yproject.com/resources/#screen-readers">Weitere nützliche Links zu Accessibility Allgemein</a></li>
+                <li><a href="https://a11y-style-guide.com/style-guide/">A11y Style Guide</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Mozilla A11y</a></li>
+              </ul>
+            </p>
+          </dd>
+        </dl>
+      </div>
+      <a class="button" href="javascript:history.back()">Zurück</a>
+    </div>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <!------------Footer-------------->
+    <footer class="footer">
+      <div>
+        <dl>
+          <dt class="footer-schrift">Quellen</dt>
+          <dd>
+            <a target="_blank" href="https://css-tricks.com/accessible-svgs/#example-2-standalone-icon-decorative"
+              >Accessible SVG's</a
+            >
+          </dd>
+          <dd>
+            <a target="_blank" href="https://www.w3.org/standards/webdesign/accessibility"
+              >W3C Accessibility Standards</a
+            >
+          </dd>
+          <dd>
+            <a
+              target="_blank"
+              href="https://www.w3.org/TR/wai-aria/#aria-label"
+              >Accessible Rich Internet Applications</a
+            >
+          </dd>
+        </dl>
+      </div>
+    </footer>
+  </body>
+</html>

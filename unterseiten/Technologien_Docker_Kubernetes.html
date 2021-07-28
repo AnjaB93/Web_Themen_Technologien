@@ -1,0 +1,212 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Docker & Kubernetes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Web_Themen_Technologien/style.css" />
+  </head>
+  <body>
+    <header class="header-unterseiten">
+      <h1>Docker & Kubernetes</h1>
+      <h2>Was ist Docker & Kubernetes? & Was gibt es für Unterschiede?</h2>
+    </header>
+    <div class="container-unterseiten">
+      <div class="container-box-unterseiten">
+        <h3>Was ist Docker & was Kubernetes?</h3>
+
+        <dl>
+          <dd>
+            <p class="exkurs">Exkurs: Was sind Container?</p>
+            <img
+              src="/Web_Themen_Technologien/assets/Container.jpg"
+              alt="Virtuelle Maschine versus Container"
+            />
+
+            <p>
+              Container in der IT bilden in sich geschlossene, standardisierte
+              Einheiten für Software. Damit vereinfachen sie den Transport und
+              die Installation von Anwendungsdaten: Im Container befindet sich
+              alles, was eine Anwendung braucht, um lauffähig zu sein. Das
+              erleichtert Entwicklung, Transport und Deployment von Software
+              enorm. Die Applikation kann somit problemlos zwischen Umgebungen
+              verschoben und anschließend ausgeführt werden, ohne dass
+              Veränderungen vorgenommen werden müssen. Damit entfallen die sonst
+              häufig auftretenden Laufzeitprobleme in unterschiedlichen
+              Umgebungen.<br />
+              <a
+                id="quelle"
+                target="_blank"
+                href="https://www.knowis.com/de/blog/modular-statt-monolith-wie-banking-it-von-containertechnologien-profitiert"
+                >knowis.com</a
+              >
+            </p>
+
+            <div class="video_container_iframe">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/5t6a-OJBTOs"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </dd>
+        </dl>
+        <dl>
+          <h3>Docker</h3>
+          <dd>
+            <p>
+              Docker ist eine Containerisierungsplattform, die eine Anwendung
+              und ihre Abhängigkeiten in einem Container zusammenfasst, sodass
+              die Anwendung in jeder Umgebung, sei es Entwicklung, Staging oder
+              Produktion, nahtlos funktioniert. Es ist ein Tool, dass das
+              Erstellen, Bereitstellen und Ausführen von Anwendungen mithilfe
+              von Containern vereinfacht. Docker-Container sind Alternativen zu
+              virtuellen Maschinen. Der RAM muss in Containern nicht vorab
+              zugewiesen werden, nicht so wie bei virtuellen Maschinen. Docker
+              ist eine Open-Source-Plattform für Entwickler,
+              Systemadministratoren und Unternehmen, mit der verteilte
+              Anwendungen im laufenden Betrieb erstellt, ausgeliefert und
+              ausgeführt werden können.
+            </p>
+            <ul>
+              <li>
+                Einfache und schnelle Konfiguration - Codes können mit minimalem
+                Aufwand und kürzerer Zeit bereitgestellt werden
+              </li>
+              <li>
+                Steigert die Produktivität - Reduziert Ressourcen, schnelle
+                Bereitstellung
+              </li>
+              <li>
+                Anwendungsisolation - Die Docker Container isolieren die
+                Anwendungen
+              </li>
+              <li>Sicherheitsmanagement</li>
+              <li>
+                Viele verschiedene Anwendungen laufen auf Docker: PostgreSQL,
+                Java, Redis, etcd, APACHE, elastic, mongoDB, NGINX
+              </li>
+            </ul>
+          </dd>
+        </dl>
+        <h3>Kubernetes (K8s / Kube)</h3>
+        <p>
+          Kubernetes ist ein Containerverwaltungstool, das die Bereitstellung
+          automatisiert. Während Anwendungen immer größer werden, um mehrere
+          Container, die auf mehreren Servern bereitgestellt sind, zu verbinden,
+          wird auch deren Betreibung immer komplexer. Aufgrund dieser
+          Komplexität stellt Kubernetes eine Open-Source-API bereit, die
+          steuert, wie und wo diese Container ausgeführt werden.
+        </p>
+        <ul>
+          <li>
+            Automatisiert manuelle Prozesse - Mit Kubernetes wird nur der
+            gewünschte Status beschrieben und die vorhandenen Änderungen
+            angepasst
+          </li>
+          <li>
+            Selbstheilung - Dies ist eine der besten Eigenschaften von Kube. Es
+            startet die ausgefallenen Container neu, ersetzt sie und beendet
+            auch denjenigen, der nicht auf das benutzerdefinierte Muster
+            reagiert.
+          </li>
+          <li>
+            Speicher-Orchestrierung - Benutzer:innen können mithilfe von
+            Kubernetes automatisch ein Speichersystem ihrer Wahl bereitstellen.
+          </li>
+        </ul>
+
+        <h3>Docker & Kubernetes</h3>
+        <img
+          src="/Web_Themen_Technologien/assets/Docker_Kubernetes.jpg"
+          alt="Docker versus Kubernetes"
+        />
+        <p>
+          Docker und Kubernetes können nicht genau miteinander verglichen
+          werden, da sie eher Hand in Hand arbeiten. Während Docker verwendet
+          wird, um Anwednungen in Container zu isolieren, ist Kubernetes ein
+          Container Container Scheduler / Orchestration-Tool, welches zum
+          Bereitstellen und Skalieren der Anwendung verwendet wird. Das heißt es
+          verwaltet mehrere Container die auf mehreren Hostcomputern
+          bereitgestellt werden.
+        </p>
+        <img
+          src="/Web_Themen_Technologien/assets/Docker_und_Kubernetes.jpg"
+          alt="Docker und Kubernetes"
+        />
+        <dl>
+          <dt>Ähnlichkeiten zwischen docker und Kubernetes:</dt>
+          <dd>
+            <ul>
+              <li>
+                Beide fühlen sich von einer Microservice-basierten Architektur
+                angezogen
+              </li>
+              <li>
+                Sie sind größtenteils in Go geschrieben, wodurch sie als leichte
+                Binärdateien geliefert werden können
+              </li>
+              <li>
+                Beide verwenden YAML-Dateien, und diese Dateien sind leicht
+                lesbar
+              </li>
+            </ul>
+          </dd>
+        </dl>
+        <dl>
+          <dt>Richtige Containerstrategie:</dt>
+          <dd>
+            Zuerst sollten IT-Teams die kurz- und langfristigen IT-Ziele kennen,
+            bevor sie sich für eine Containerstrategie entscheiden. Wenn aber
+            eine Containerstrategie angestrebt wird dann kann sie wie oben schon
+            beschrieben aus einer Containersoftware (bspw. Docker) und einer
+            Containerorchestrierung (bspw. Kubernetes) bestehen.
+            <img
+              src="/Web_Themen_Technologien/assets/Containerstrategie.jpg"
+              alt="Containerstrategie"
+            />
+          </dd>
+        </dl>
+      </div>
+      <a class="button" href="javascript:history.back()">Zurück</a>
+    </div>
+    <!------------Footer-------------->
+    <footer class="footer">
+      <div>
+        <dl>
+          <dt class="footer-schrift">Quellen</dt>
+          <dd>
+            <a
+              target="_blank"
+              href="https://geekflare.com/de/docker-vs-kubernetes/"
+              >Docker vs. Kubernetes</a
+            >
+          </dd>
+          <dd>
+            <a
+              target="_blank"
+              href="https://azure.microsoft.com/de-de/topic/kubernetes-vs-docker/"
+              >Docker und Kubernetes</a
+            >
+          </dd>
+          <dd>
+            <a target="_blank" href="https://www.openplatforms.at/more.php"
+              >Was sind/ist Container/Containerisierung?</a
+            >
+          </dd>
+          <dd>
+            <a
+              target="_blank"
+              href="https://www.computerweekly.com/de/feature/Vorteile-von-Container-Bereitstellung-und-Management-kennen"
+              >Container Bereitstellung / Containerstrategie</a
+            >
+          </dd>
+        </dl>
+      </div>
+    </footer>
+  </body>
+</html>
